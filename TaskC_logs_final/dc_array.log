@@ -1,0 +1,332 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version L-2016.03-SP3 for linux64 - Jul 18, 2016 
+
+                    Copyright (c) 1988 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+Initializing gui preferences from file  /u/sanketp/.synopsys_dv_prefs.tcl
+# ============================================================
+# ECE 527 Project 2 - Task C
+# Design Compiler script: 8x8 array multiplier
+#
+# Run from TaskC/:
+#     dc_shell -f scripts/dc_array.tcl
+# ============================================================
+set SCRIPT_DIR [file dirname [info script]]
+/u/sanketp/ece527-lab2/TaskC/scripts
+if {$SCRIPT_DIR eq "" || $SCRIPT_DIR eq "."} {
+    set ROOT [pwd]
+} else {
+    set ROOT [file normalize [file join $SCRIPT_DIR ..]]
+}
+/u/sanketp/ece527-lab2/TaskC
+set LIB $ROOT/lib/gscl45nm.db
+/u/sanketp/ece527-lab2/TaskC/lib/gscl45nm.db
+file mkdir $ROOT/reports
+file mkdir $ROOT/netlists
+file mkdir $ROOT/logs
+set_app_var search_path  [list $ROOT/rtl $ROOT/lib]
+/u/sanketp/ece527-lab2/TaskC/rtl /u/sanketp/ece527-lab2/TaskC/lib
+set_app_var target_library $LIB
+/u/sanketp/ece527-lab2/TaskC/lib/gscl45nm.db
+set_app_var link_library   "* $LIB"
+* /u/sanketp/ece527-lab2/TaskC/lib/gscl45nm.db
+# Read all RTL; current_design below selects the top level.
+foreach f {full_adder.sv rca.sv csa.sv array_multiplier.sv wallace_multiplier.sv} {
+    read_file -format sverilog $ROOT/rtl/$f
+}
+Loading db file '/u/sanketp/ece527-lab2/TaskC/lib/gscl45nm.db'
+Loading db file '/pkgs/synopsys/2016/dft_compiler/libraries/syn/gtech.db'
+Loading db file '/pkgs/synopsys/2016/dft_compiler/libraries/syn/standard.sldb'
+  Loading link library 'gscl45nm'
+  Loading link library 'gtech'
+Loading sverilog file '/u/sanketp/ece527-lab2/TaskC/rtl/full_adder.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /u/sanketp/ece527-lab2/TaskC/rtl/full_adder.sv
+Presto compilation completed successfully.
+Current design is now '/u/sanketp/ece527-lab2/TaskC/rtl/full_adder.db:full_adder'
+Loaded 1 design.
+Current design is 'full_adder'.
+Loading sverilog file '/u/sanketp/ece527-lab2/TaskC/rtl/rca.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /u/sanketp/ece527-lab2/TaskC/rtl/rca.sv
+Presto compilation completed successfully.
+Current design is now '/u/sanketp/ece527-lab2/TaskC/rtl/rca.db:rca'
+Loaded 1 design.
+Current design is 'rca'.
+Loading sverilog file '/u/sanketp/ece527-lab2/TaskC/rtl/csa.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /u/sanketp/ece527-lab2/TaskC/rtl/csa.sv
+Presto compilation completed successfully.
+Current design is now '/u/sanketp/ece527-lab2/TaskC/rtl/csa.db:csa'
+Loaded 1 design.
+Current design is 'csa'.
+Loading sverilog file '/u/sanketp/ece527-lab2/TaskC/rtl/array_multiplier.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /u/sanketp/ece527-lab2/TaskC/rtl/array_multiplier.sv
+Presto compilation completed successfully.
+Current design is now '/u/sanketp/ece527-lab2/TaskC/rtl/array_multiplier.db:array_multiplier'
+Loaded 1 design.
+Current design is 'array_multiplier'.
+Loading sverilog file '/u/sanketp/ece527-lab2/TaskC/rtl/wallace_multiplier.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /u/sanketp/ece527-lab2/TaskC/rtl/wallace_multiplier.sv
+Presto compilation completed successfully.
+Current design is now '/u/sanketp/ece527-lab2/TaskC/rtl/wallace_multiplier.db:wallace_multiplier'
+Loaded 1 design.
+Current design is 'wallace_multiplier'.
+# Elaborate parameterized modules so DC can resolve references during link
+elaborate array_multiplier
+Error: Cannot find the design 'array_multiplier' in the library 'WORK'. (LBR-0)
+0
+current_design array_multiplier
+Current design is 'array_multiplier'.
+{array_multiplier}
+link
+
+  Linking design 'array_multiplier'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (5 designs)               /u/sanketp/ece527-lab2/TaskC/rtl/array_multiplier.db, etc
+  gscl45nm (library)          /u/sanketp/ece527-lab2/TaskC/lib/gscl45nm.db
+
+Information: Building the design 'rca' instantiated from design 'array_multiplier' with
+	the parameters "W=16". (HDL-193)
+Warning: Cannot find the design 'rca' in the library 'WORK'. (LBR-1)
+Warning: Unable to resolve reference 'rca' in 'array_multiplier'. (LINK-5)
+0
+check_design
+Warning: Design 'array_multiplier' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+check_design summary:
+Version:     L-2016.03-SP3
+Date:        Thu Nov 19 19:38:10 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Nets                                                                1
+    Multiply driven net with constant driver (LINT-54)              1
+
+Tristate                                                           65
+    A tristate bus has a non tri-state driver (LINT-34)            65
+--------------------------------------------------------------------------------
+
+Warning: In design 'array_multiplier', three-state bus 'pp[7][7]' has non three-state driver 'C134/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[7][8]' has non three-state driver 'C133/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[7][9]' has non three-state driver 'C132/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[7][10]' has non three-state driver 'C131/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[7][11]' has non three-state driver 'C130/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[7][12]' has non three-state driver 'C129/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[7][13]' has non three-state driver 'C128/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[7][14]' has non three-state driver 'C127/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[6][6]' has non three-state driver 'C126/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[6][7]' has non three-state driver 'C125/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[6][8]' has non three-state driver 'C124/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[6][9]' has non three-state driver 'C123/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[6][10]' has non three-state driver 'C122/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[6][11]' has non three-state driver 'C121/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[6][12]' has non three-state driver 'C120/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[6][13]' has non three-state driver 'C119/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[5][5]' has non three-state driver 'C118/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[5][6]' has non three-state driver 'C117/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[5][7]' has non three-state driver 'C116/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[5][8]' has non three-state driver 'C115/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[5][9]' has non three-state driver 'C114/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[5][10]' has non three-state driver 'C113/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[5][11]' has non three-state driver 'C112/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[5][12]' has non three-state driver 'C111/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[4][4]' has non three-state driver 'C110/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[4][5]' has non three-state driver 'C109/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[4][6]' has non three-state driver 'C108/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[4][7]' has non three-state driver 'C107/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[4][8]' has non three-state driver 'C106/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[4][9]' has non three-state driver 'C105/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[4][10]' has non three-state driver 'C104/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[4][11]' has non three-state driver 'C103/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[3][3]' has non three-state driver 'C102/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[3][4]' has non three-state driver 'C101/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[3][5]' has non three-state driver 'C100/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[3][6]' has non three-state driver 'C99/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[3][7]' has non three-state driver 'C98/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[3][8]' has non three-state driver 'C97/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[3][9]' has non three-state driver 'C96/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[3][10]' has non three-state driver 'C95/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[2][2]' has non three-state driver 'C94/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[2][3]' has non three-state driver 'C93/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[2][4]' has non three-state driver 'C92/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[2][5]' has non three-state driver 'C91/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[2][6]' has non three-state driver 'C90/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[2][7]' has non three-state driver 'C89/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[2][8]' has non three-state driver 'C88/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[2][9]' has non three-state driver 'C87/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[1][1]' has non three-state driver 'C86/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[1][2]' has non three-state driver 'C85/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[1][3]' has non three-state driver 'C84/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[1][4]' has non three-state driver 'C83/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[1][5]' has non three-state driver 'C82/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[1][6]' has non three-state driver 'C81/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[1][7]' has non three-state driver 'C80/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[1][8]' has non three-state driver 'C79/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[0][0]' has non three-state driver 'C78/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[0][1]' has non three-state driver 'C77/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[0][2]' has non three-state driver 'C76/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[0][3]' has non three-state driver 'C75/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[0][4]' has non three-state driver 'C74/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[0][5]' has non three-state driver 'C73/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[0][6]' has non three-state driver 'C72/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus 'pp[0][7]' has non three-state driver 'C71/Z'. (LINT-34)
+Warning: In design 'array_multiplier', three-state bus '*Logic0*' has non three-state driver 'U1/**logic_0**'. (LINT-34)
+Warning: In design 'array_multiplier', multiply-driven net '*Logic0*' is driven by constant 0. (LINT-54)
+1
+# --- Constraints -------------------------------------------------
+# This is a combinational design, so constrain every input-to-output
+# path.  The 100 ns value is deliberately loose: we want the intrinsic
+# delay from report_timing, not a hard speed target.
+set_max_delay 100 -from [all_inputs] -to [all_outputs]
+Warning: Design 'array_multiplier' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+set_load 0.5 [all_outputs]
+1
+# Same activity assumptions for both multipliers so that the power
+# numbers are directly comparable.  If the installed DC version does
+# not support this command, fall back to DC's default activity.
+if {[catch {set_switching_activity -static_probability 0.5 -toggle_rate 0.2 [all_inputs]} msg]} {
+    puts "WARNING: set_switching_activity failed: $msg"
+    puts "         report_power will use DC default switching activity."
+}
+Warning: Design 'array_multiplier' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+# --- Synthesis ---------------------------------------------------
+compile -map_effort high
+Warning: Design 'array_multiplier' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | L-2016.03-DWBB_201603.3 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 66 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'array_multiplier'
+Information: Building the design 'rca' instantiated from design 'array_multiplier' with
+	the parameters "W=16". (HDL-193)
+Warning: Cannot find the design 'rca' in the library 'WORK'. (LBR-1)
+Warning: Unable to resolve reference 'rca' in 'array_multiplier'. (LINK-5)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:00     180.2      0.00       0.0       0.0                          
+    0:00:00     180.2      0.00       0.0       0.0                          
+    0:00:00     180.2      0.00       0.0       0.0                          
+    0:00:00     180.2      0.00       0.0       0.0                          
+    0:00:00     180.2      0.00       0.0       0.0                          
+    0:00:00     150.2      0.00       0.0       0.0                          
+    0:00:00     150.2      0.00       0.0       0.0                          
+    0:00:00     150.2      0.00       0.0       0.0                          
+    0:00:00     150.2      0.00       0.0       0.0                          
+    0:00:00     150.2      0.00       0.0       0.0                          
+    0:00:00     150.2      0.00       0.0       0.0                          
+    0:00:00     150.2      0.00       0.0       0.0                          
+    0:00:00     150.2      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:00     150.2      0.00       0.0       0.0                          
+    0:00:00     150.2      0.00       0.0       0.0                          
+    0:00:00     150.2      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:00     150.2      0.00       0.0       0.0                          
+    0:00:00     150.2      0.00       0.0       0.0                          
+    0:00:00     150.2      0.00       0.0       0.0                          
+    0:00:00     150.2      0.00       0.0       0.0                          
+    0:00:00     150.2      0.00       0.0       0.0                          
+    0:00:00     150.2      0.00       0.0       0.0                          
+    0:00:00     150.2      0.00       0.0       0.0                          
+    0:00:00     150.2      0.00       0.0       0.0                          
+    0:00:00     150.2      0.00       0.0       0.0                          
+    0:00:00     150.2      0.00       0.0       0.0                          
+    0:00:00     150.2      0.00       0.0       0.0                          
+Loading db file '/u/sanketp/ece527-lab2/TaskC/lib/gscl45nm.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+# --- Reports -----------------------------------------------------
+redirect $ROOT/reports/array_area.rpt      { report_area }
+redirect $ROOT/reports/array_qor.rpt       { report_qor }
+redirect $ROOT/reports/array_reference.rpt { report_reference }
+redirect $ROOT/reports/array_timing.rpt    { report_timing -delay_type max -max_paths 10 -nworst 10 -from [all_inputs] -to [all_outputs] }
+redirect $ROOT/reports/array_power.rpt     { report_power -analysis_effort high }
+# --- Outputs -----------------------------------------------------
+write -format verilog -hierarchy -output $ROOT/netlists/array_multiplier.v
+Warning: Design 'array_multiplier' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Writing verilog file '/u/sanketp/ece527-lab2/TaskC/netlists/array_multiplier.v'.
+1
+write -format ddc     -hierarchy -output $ROOT/netlists/array_multiplier.ddc
+Warning: Design 'array_multiplier' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Writing ddc file '/u/sanketp/ece527-lab2/TaskC/netlists/array_multiplier.ddc'.
+1
+exit
+
+Thank you...

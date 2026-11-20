@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : area
+Design : wallace_multiplier
+Version: L-2016.03-SP3
+Date   : Tue Nov 17 15:04:51 2026
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    gscl45nm (File: /u/sanketp/ece527/lab2/lab2/TaskC/lib/gscl45nm.db)
+
+Number of ports:                          562
+Number of nets:                          1219
+Number of cells:                          676
+Number of combinational cells:            655
+Number of sequential cells:                14
+Number of macros/black boxes:               0
+Number of buf/inv:                        209
+Number of references:                       8
+
+Combinational area:               1947.125657
+Buf/Inv area:                      302.229195
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                  1947.125657
+Total area:                 undefined
+1

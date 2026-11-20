@@ -19,7 +19,7 @@ Report : timing
         -max_paths 1
 Design : wallace_multiplier
 Version: X-2025.06-SP4
-Date   : Thu Nov 19 22:45:40 2026
+Date   : Thu Nov 19 23:02:45 2026
 ****************************************
 
 Operating Conditions: nom_pvt   Library: gtech

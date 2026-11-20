@@ -1,0 +1,160 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid this.
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version X-2025.06-SP4 for linux64 - Nov 25, 2025 
+
+                    Copyright (c) 1988 - 2025 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+      Inc.  This software may only be used in accordance with the terms and
+  conditions of a written license agreement with Synopsys, Inc.  All other use,
+   reproduction, or distribution of this software is strictly prohibited.  By
+   installing, accessing, using, or executing this software, you agree that it
+  will reside on, operate within, and have access to the computers and networks
+    where such software is used ("Host System"), and that Synopsys may access
+     components and data of the Host System as necessary for it to function
+ properly, to authenticate and validate license keys, to verify that it is used
+ only in conformity with the applicable license restrictions, and to communicate
+                 error messages and associated data to Synopsys.
+
+Initializing...
+Current time:       Thu Nov 19 20:22:36 2026
+Hostname:           mo.ece.pdx.edu
+CPU Model:          Intel Xeon Processor (Cascadelake)
+CPU Details:        Cores = 32 : Sockets = 32 : Cache Size = 16384 KB : Freq = 2.50 GHz
+OS:                 Linux 3.10.0-1160.119.1.el7.x86_64
+RAM:                119 GB (Free   2 GB)
+Swap:                 0 GB (Free   0 GB)
+Work Filesystem:    /u/sanketp mounted to vol-lapis.cat.pdx.edu:/lapis/home/16/sanketp/redhat7
+Tmp Filesystem:     / mounted to /dev/vda1
+Work Disk:          4187 GB (Free 3966 GB)
+Tmp Disk:            49 GB (Free  14 GB)
+# ============================================================
+# ECE 527 Project 2 - Task C
+# Design Compiler script: 8x8 Wallace-tree multiplier
+#
+# Run from TaskC/:
+#     dc_shell -f scripts/dc_wallace.tcl
+# ============================================================
+#---------------- Settings (change these) ----------------
+set DESIGN      wallace_multiplier
+wallace_multiplier
+set RTL_FILES   {full_adder.sv rca.sv csa.sv array_multiplier.sv wallace_multiplier.sv}
+full_adder.sv rca.sv csa.sv array_multiplier.sv wallace_multiplier.sv
+set CLK_PERIOD  10.0     ;# ns, combinational design - loose period for timing analysis
+10.0
+set IN_DELAY    0.6      ;# ns, input delay from assignment
+0.6
+set CLK_LATENCY 0.2      ;# ns, external clock latency
+0.2
+set OUT_DELAY   0.0      ;# ns, output delay
+0.0
+#---------------- Libraries ----------------
+set LIB gscl45nm.db
+gscl45nm.db
+set target_library $LIB
+gscl45nm.db
+set link_library   "* $LIB"
+* gscl45nm.db
+#---------------- Read and link the design ----------------
+read_sverilog $RTL_FILES
+Loading db file '/pkgs/synopsys/2025/design_compiler/syn/X-2025.06-SP4/libraries/syn/gtech.db'
+Loading db file '/pkgs/synopsys/2025/design_compiler/syn/X-2025.06-SP4/libraries/syn/standard.sldb'
+  Loading link library 'gtech'
+Error: Cannot read file 'full_adder.sv'. (UID-58)
+Error: Cannot read file 'rca.sv'. (UID-58)
+Error: Cannot read file 'csa.sv'. (UID-58)
+Error: Cannot read file 'array_multiplier.sv'. (UID-58)
+Error: Cannot read file 'wallace_multiplier.sv'. (UID-58)
+No designs were read
+current_design $DESIGN
+Error: Can't find design 'wallace_multiplier'. (UID-109)
+Error: Current design is not defined. (UID-4)
+link
+Error: Current design is not defined. (UID-4)
+0
+check_design
+Error: Current design is not defined. (UID-4)
+0
+#---------------- Timing constraints ----------------
+create_clock -name clk -period $CLK_PERIOD [get_ports clk]
+Error: Current design is not defined. (UID-4)
+Error: Can't find port 'clk'. (UID-109)
+Error: Value for list 'source_objects' must have 1 elements. (CMD-036)
+0
+set_clock_latency -source $CLK_LATENCY [get_clocks clk]
+Error: Current design is not defined. (UID-4)
+Error: Can't find clock 'clk'. (UID-109)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+0
+set_input_delay  $IN_DELAY  -clock clk [remove_from_collection [all_inputs] [get_ports clk]]
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Can't find port 'clk'. (UID-109)
+Error: Current design is not defined. (UID-4)
+Error: Can't find clock 'clk'. (UID-109)
+Error: Value for list '-clock' must have 1 elements. (CMD-036)
+Error: Value for list 'port_pin_list' must have 1 elements. (CMD-036)
+0
+set_output_delay $OUT_DELAY -clock clk [all_outputs]
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Can't find clock 'clk'. (UID-109)
+Error: Value for list '-clock' must have 1 elements. (CMD-036)
+Error: Value for list 'port_pin_list' must have 1 elements. (CMD-036)
+0
+# Same activity assumptions for both multipliers so power numbers are comparable
+if {[catch {set_switching_activity -static_probability 0.5 -toggle_rate 0.2 [all_inputs]} msg]} {
+    puts "WARNING: set_switching_activity failed: $msg"
+}
+Error: Current design is not defined. (UID-4)
+Error: Value for list '<object_list>' must have 1 elements. (CMD-036)
+#---------------- Synthesize ----------------
+compile -ungroup_all
+Error: Current design is not defined. (UID-4)
+0
+#---------------- Reports (saved to files for turn-in) ----------------
+file mkdir reports
+file mkdir netlists
+report_timing -delay_type max -max_paths 5 > reports/${DESIGN}_timing_max.rpt
+report_timing -delay_type min              > reports/${DESIGN}_timing_min.rpt
+report_area                                > reports/${DESIGN}_area.rpt
+report_reference                           > reports/${DESIGN}_cells.rpt
+report_qor                                 > reports/${DESIGN}_qor.rpt
+report_timing -delay_type max -max_paths 10 -nworst 10 -from [all_inputs] -to [all_outputs] > reports/${DESIGN}_timing.rpt
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+report_power -analysis_effort high         > reports/${DESIGN}_power.rpt
+# Also show key reports on screen
+report_timing -delay_type max
+Error: Current design is not defined. (UID-4)
+0
+report_area
+Error: Current design is not defined. (UID-4)
+0
+#---------------- Write netlist for PrimeTime ----------------
+write -f verilog -hierarchy -output netlists/${DESIGN}_netlist.v
+Error: No files or designs were specified. (UID-22)
+0
+write -f ddc     -hierarchy -output netlists/${DESIGN}.ddc
+Error: No files or designs were specified. (UID-22)
+0
+exit
+
+Memory usage for this session 113 Mbytes.
+Memory usage for this session including child processes 113 Mbytes.
+CPU usage for this session 3 seconds ( 0.00 hours ).
+Elapsed time for this session 4 seconds ( 0.00 hours ).
+
+Thank you...

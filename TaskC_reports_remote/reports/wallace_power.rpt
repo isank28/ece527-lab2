@@ -1,0 +1,53 @@
+Loading db file '/u/sanketp/ece527/lab2/lab2/TaskC/lib/gscl45nm.db'
+Information: Propagating switching activity (high effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+ 
+****************************************
+Report : power
+        -analysis_effort high
+Design : wallace_multiplier
+Version: L-2016.03-SP3
+Date   : Tue Nov 17 15:04:51 2026
+****************************************
+
+
+Library(s) Used:
+
+    gscl45nm (File: /u/sanketp/ece527/lab2/lab2/TaskC/lib/gscl45nm.db)
+
+
+Operating Conditions: typical   Library: gscl45nm
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  = 738.0292 uW   (19%)
+  Net Switching Power  =   3.2497 mW   (81%)
+                         ---------
+Total Dynamic Power    =   3.9877 mW  (100%)
+
+Cell Leakage Power     =  10.8893 uW
+
+Information: report_power power group summary does not include estimated clock tree power. (PWR-789)
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational      0.7380            3.2497        1.0889e+04            3.9986  ( 100.00%)
+--------------------------------------------------------------------------------------------------
+Total              0.7380 mW         3.2497 mW     1.0889e+04 nW         3.9986 mW
+1

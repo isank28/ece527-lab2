@@ -1,0 +1,556 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 10
+        -max_paths 10
+Design : wallace_multiplier
+Version: L-2016.03-SP3
+Date   : Tue Nov 17 15:04:51 2026
+****************************************
+
+Operating Conditions: typical   Library: gscl45nm
+Wire Load Model Mode: top
+
+  Startpoint: a[3] (input port)
+  Endpoint: p[15] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  a[3] (in)                                               0.00       0.00 r
+  U68/Y (AND2X1)                                          0.06       0.06 r
+  u_csa0/b[4] (csa_0)                                     0.00       0.06 r
+  u_csa0/U47/Y (XNOR2X1)                                  0.07       0.14 r
+  u_csa0/U22/Y (XOR2X1)                                   0.05       0.19 r
+  u_csa0/sum[4] (csa_0)                                   0.00       0.19 r
+  u_csa2/c[4] (csa_4)                                     0.00       0.19 r
+  u_csa2/U78/Y (INVX1)                                    0.03       0.22 f
+  u_csa2/U22/Y (XOR2X1)                                   0.05       0.27 r
+  u_csa2/sum[4] (csa_4)                                   0.00       0.27 r
+  u_csa4/a[4] (csa_2)                                     0.00       0.27 r
+  u_csa4/U47/Y (XNOR2X1)                                  0.05       0.32 f
+  u_csa4/U22/Y (XOR2X1)                                   0.07       0.39 r
+  u_csa4/sum[4] (csa_2)                                   0.00       0.39 r
+  u_csa5/b[4] (csa_1)                                     0.00       0.39 r
+  u_csa5/U47/Y (XNOR2X1)                                  0.08       0.46 r
+  u_csa5/U22/Y (XOR2X1)                                   0.05       0.52 f
+  u_csa5/sum[4] (csa_1)                                   0.00       0.52 f
+  add_46/A[4] (wallace_multiplier_DW01_add_0)             0.00       0.52 f
+  add_46/U1_4/YC (FAX1)                                   0.09       0.61 f
+  add_46/U1_5/YC (FAX1)                                   0.08       0.69 f
+  add_46/U1_6/YC (FAX1)                                   0.08       0.77 f
+  add_46/U1_7/YC (FAX1)                                   0.08       0.85 f
+  add_46/U1_8/YC (FAX1)                                   0.08       0.93 f
+  add_46/U1_9/YC (FAX1)                                   0.08       1.02 f
+  add_46/U1_10/YC (FAX1)                                  0.08       1.10 f
+  add_46/U1_11/YC (FAX1)                                  0.08       1.18 f
+  add_46/U1_12/YC (FAX1)                                  0.08       1.26 f
+  add_46/U1_13/YC (FAX1)                                  0.08       1.34 f
+  add_46/U1_14/YC (FAX1)                                  0.08       1.42 f
+  add_46/U1_15/YS (FAX1)                                  0.07       1.49 r
+  add_46/U30/Y (BUFX2)                                    0.83       2.32 r
+  add_46/SUM[15] (wallace_multiplier_DW01_add_0)          0.00       2.32 r
+  p[15] (out)                                             0.00       2.32 r
+  data arrival time                                                  2.32
+
+  max_delay                                             100.00     100.00
+  output external delay                                   0.00     100.00
+  data required time                                               100.00
+  --------------------------------------------------------------------------
+  data required time                                               100.00
+  data arrival time                                                 -2.32
+  --------------------------------------------------------------------------
+  slack (MET)                                                       97.68
+
+
+  Startpoint: a[3] (input port)
+  Endpoint: p[15] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 f
+  a[3] (in)                                               0.00       0.00 f
+  U68/Y (AND2X1)                                          0.05       0.05 f
+  u_csa0/b[4] (csa_0)                                     0.00       0.05 f
+  u_csa0/U47/Y (XNOR2X1)                                  0.07       0.12 r
+  u_csa0/U22/Y (XOR2X1)                                   0.05       0.17 r
+  u_csa0/sum[4] (csa_0)                                   0.00       0.17 r
+  u_csa2/c[4] (csa_4)                                     0.00       0.17 r
+  u_csa2/U78/Y (INVX1)                                    0.03       0.21 f
+  u_csa2/U22/Y (XOR2X1)                                   0.05       0.26 r
+  u_csa2/sum[4] (csa_4)                                   0.00       0.26 r
+  u_csa4/a[4] (csa_2)                                     0.00       0.26 r
+  u_csa4/U47/Y (XNOR2X1)                                  0.05       0.31 f
+  u_csa4/U22/Y (XOR2X1)                                   0.07       0.38 r
+  u_csa4/sum[4] (csa_2)                                   0.00       0.38 r
+  u_csa5/b[4] (csa_1)                                     0.00       0.38 r
+  u_csa5/U47/Y (XNOR2X1)                                  0.08       0.45 r
+  u_csa5/U22/Y (XOR2X1)                                   0.05       0.51 f
+  u_csa5/sum[4] (csa_1)                                   0.00       0.51 f
+  add_46/A[4] (wallace_multiplier_DW01_add_0)             0.00       0.51 f
+  add_46/U1_4/YC (FAX1)                                   0.09       0.60 f
+  add_46/U1_5/YC (FAX1)                                   0.08       0.68 f
+  add_46/U1_6/YC (FAX1)                                   0.08       0.76 f
+  add_46/U1_7/YC (FAX1)                                   0.08       0.84 f
+  add_46/U1_8/YC (FAX1)                                   0.08       0.92 f
+  add_46/U1_9/YC (FAX1)                                   0.08       1.00 f
+  add_46/U1_10/YC (FAX1)                                  0.08       1.09 f
+  add_46/U1_11/YC (FAX1)                                  0.08       1.17 f
+  add_46/U1_12/YC (FAX1)                                  0.08       1.25 f
+  add_46/U1_13/YC (FAX1)                                  0.08       1.33 f
+  add_46/U1_14/YC (FAX1)                                  0.08       1.41 f
+  add_46/U1_15/YS (FAX1)                                  0.07       1.48 r
+  add_46/U30/Y (BUFX2)                                    0.83       2.31 r
+  add_46/SUM[15] (wallace_multiplier_DW01_add_0)          0.00       2.31 r
+  p[15] (out)                                             0.00       2.31 r
+  data arrival time                                                  2.31
+
+  max_delay                                             100.00     100.00
+  output external delay                                   0.00     100.00
+  data required time                                               100.00
+  --------------------------------------------------------------------------
+  data required time                                               100.00
+  data arrival time                                                 -2.31
+  --------------------------------------------------------------------------
+  slack (MET)                                                       97.69
+
+
+  Startpoint: b[1] (input port)
+  Endpoint: p[15] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  b[1] (in)                                               0.00       0.00 r
+  U68/Y (AND2X1)                                          0.05       0.05 r
+  u_csa0/b[4] (csa_0)                                     0.00       0.05 r
+  u_csa0/U47/Y (XNOR2X1)                                  0.07       0.12 r
+  u_csa0/U22/Y (XOR2X1)                                   0.05       0.17 r
+  u_csa0/sum[4] (csa_0)                                   0.00       0.17 r
+  u_csa2/c[4] (csa_4)                                     0.00       0.17 r
+  u_csa2/U78/Y (INVX1)                                    0.03       0.21 f
+  u_csa2/U22/Y (XOR2X1)                                   0.05       0.26 r
+  u_csa2/sum[4] (csa_4)                                   0.00       0.26 r
+  u_csa4/a[4] (csa_2)                                     0.00       0.26 r
+  u_csa4/U47/Y (XNOR2X1)                                  0.05       0.31 f
+  u_csa4/U22/Y (XOR2X1)                                   0.07       0.38 r
+  u_csa4/sum[4] (csa_2)                                   0.00       0.38 r
+  u_csa5/b[4] (csa_1)                                     0.00       0.38 r
+  u_csa5/U47/Y (XNOR2X1)                                  0.08       0.45 r
+  u_csa5/U22/Y (XOR2X1)                                   0.05       0.51 f
+  u_csa5/sum[4] (csa_1)                                   0.00       0.51 f
+  add_46/A[4] (wallace_multiplier_DW01_add_0)             0.00       0.51 f
+  add_46/U1_4/YC (FAX1)                                   0.09       0.60 f
+  add_46/U1_5/YC (FAX1)                                   0.08       0.68 f
+  add_46/U1_6/YC (FAX1)                                   0.08       0.76 f
+  add_46/U1_7/YC (FAX1)                                   0.08       0.84 f
+  add_46/U1_8/YC (FAX1)                                   0.08       0.92 f
+  add_46/U1_9/YC (FAX1)                                   0.08       1.00 f
+  add_46/U1_10/YC (FAX1)                                  0.08       1.09 f
+  add_46/U1_11/YC (FAX1)                                  0.08       1.17 f
+  add_46/U1_12/YC (FAX1)                                  0.08       1.25 f
+  add_46/U1_13/YC (FAX1)                                  0.08       1.33 f
+  add_46/U1_14/YC (FAX1)                                  0.08       1.41 f
+  add_46/U1_15/YS (FAX1)                                  0.07       1.48 r
+  add_46/U30/Y (BUFX2)                                    0.83       2.31 r
+  add_46/SUM[15] (wallace_multiplier_DW01_add_0)          0.00       2.31 r
+  p[15] (out)                                             0.00       2.31 r
+  data arrival time                                                  2.31
+
+  max_delay                                             100.00     100.00
+  output external delay                                   0.00     100.00
+  data required time                                               100.00
+  --------------------------------------------------------------------------
+  data required time                                               100.00
+  data arrival time                                                 -2.31
+  --------------------------------------------------------------------------
+  slack (MET)                                                       97.69
+
+
+  Startpoint: a[4] (input port)
+  Endpoint: p[15] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  a[4] (in)                                               0.00       0.00 r
+  U98/Y (AND2X1)                                          0.06       0.06 r
+  u_csa0/a[4] (csa_0)                                     0.00       0.06 r
+  u_csa0/U47/Y (XNOR2X1)                                  0.06       0.12 r
+  u_csa0/U22/Y (XOR2X1)                                   0.05       0.17 r
+  u_csa0/sum[4] (csa_0)                                   0.00       0.17 r
+  u_csa2/c[4] (csa_4)                                     0.00       0.17 r
+  u_csa2/U78/Y (INVX1)                                    0.03       0.21 f
+  u_csa2/U22/Y (XOR2X1)                                   0.05       0.26 r
+  u_csa2/sum[4] (csa_4)                                   0.00       0.26 r
+  u_csa4/a[4] (csa_2)                                     0.00       0.26 r
+  u_csa4/U47/Y (XNOR2X1)                                  0.05       0.30 f
+  u_csa4/U22/Y (XOR2X1)                                   0.07       0.37 r
+  u_csa4/sum[4] (csa_2)                                   0.00       0.37 r
+  u_csa5/b[4] (csa_1)                                     0.00       0.37 r
+  u_csa5/U47/Y (XNOR2X1)                                  0.08       0.45 r
+  u_csa5/U22/Y (XOR2X1)                                   0.05       0.50 f
+  u_csa5/sum[4] (csa_1)                                   0.00       0.50 f
+  add_46/A[4] (wallace_multiplier_DW01_add_0)             0.00       0.50 f
+  add_46/U1_4/YC (FAX1)                                   0.09       0.59 f
+  add_46/U1_5/YC (FAX1)                                   0.08       0.68 f
+  add_46/U1_6/YC (FAX1)                                   0.08       0.76 f
+  add_46/U1_7/YC (FAX1)                                   0.08       0.84 f
+  add_46/U1_8/YC (FAX1)                                   0.08       0.92 f
+  add_46/U1_9/YC (FAX1)                                   0.08       1.00 f
+  add_46/U1_10/YC (FAX1)                                  0.08       1.08 f
+  add_46/U1_11/YC (FAX1)                                  0.08       1.16 f
+  add_46/U1_12/YC (FAX1)                                  0.08       1.25 f
+  add_46/U1_13/YC (FAX1)                                  0.08       1.33 f
+  add_46/U1_14/YC (FAX1)                                  0.08       1.41 f
+  add_46/U1_15/YS (FAX1)                                  0.07       1.48 r
+  add_46/U30/Y (BUFX2)                                    0.83       2.30 r
+  add_46/SUM[15] (wallace_multiplier_DW01_add_0)          0.00       2.30 r
+  p[15] (out)                                             0.00       2.30 r
+  data arrival time                                                  2.30
+
+  max_delay                                             100.00     100.00
+  output external delay                                   0.00     100.00
+  data required time                                               100.00
+  --------------------------------------------------------------------------
+  data required time                                               100.00
+  data arrival time                                                 -2.30
+  --------------------------------------------------------------------------
+  slack (MET)                                                       97.70
+
+
+  Startpoint: b[1] (input port)
+  Endpoint: p[15] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 f
+  b[1] (in)                                               0.00       0.00 f
+  U68/Y (AND2X1)                                          0.04       0.04 f
+  u_csa0/b[4] (csa_0)                                     0.00       0.04 f
+  u_csa0/U47/Y (XNOR2X1)                                  0.07       0.11 r
+  u_csa0/U22/Y (XOR2X1)                                   0.05       0.16 r
+  u_csa0/sum[4] (csa_0)                                   0.00       0.16 r
+  u_csa2/c[4] (csa_4)                                     0.00       0.16 r
+  u_csa2/U78/Y (INVX1)                                    0.03       0.20 f
+  u_csa2/U22/Y (XOR2X1)                                   0.05       0.25 r
+  u_csa2/sum[4] (csa_4)                                   0.00       0.25 r
+  u_csa4/a[4] (csa_2)                                     0.00       0.25 r
+  u_csa4/U47/Y (XNOR2X1)                                  0.05       0.30 f
+  u_csa4/U22/Y (XOR2X1)                                   0.07       0.36 r
+  u_csa4/sum[4] (csa_2)                                   0.00       0.36 r
+  u_csa5/b[4] (csa_1)                                     0.00       0.36 r
+  u_csa5/U47/Y (XNOR2X1)                                  0.08       0.44 r
+  u_csa5/U22/Y (XOR2X1)                                   0.05       0.49 f
+  u_csa5/sum[4] (csa_1)                                   0.00       0.49 f
+  add_46/A[4] (wallace_multiplier_DW01_add_0)             0.00       0.49 f
+  add_46/U1_4/YC (FAX1)                                   0.09       0.58 f
+  add_46/U1_5/YC (FAX1)                                   0.08       0.67 f
+  add_46/U1_6/YC (FAX1)                                   0.08       0.75 f
+  add_46/U1_7/YC (FAX1)                                   0.08       0.83 f
+  add_46/U1_8/YC (FAX1)                                   0.08       0.91 f
+  add_46/U1_9/YC (FAX1)                                   0.08       0.99 f
+  add_46/U1_10/YC (FAX1)                                  0.08       1.07 f
+  add_46/U1_11/YC (FAX1)                                  0.08       1.16 f
+  add_46/U1_12/YC (FAX1)                                  0.08       1.24 f
+  add_46/U1_13/YC (FAX1)                                  0.08       1.32 f
+  add_46/U1_14/YC (FAX1)                                  0.08       1.40 f
+  add_46/U1_15/YS (FAX1)                                  0.07       1.47 r
+  add_46/U30/Y (BUFX2)                                    0.83       2.29 r
+  add_46/SUM[15] (wallace_multiplier_DW01_add_0)          0.00       2.29 r
+  p[15] (out)                                             0.00       2.29 r
+  data arrival time                                                  2.29
+
+  max_delay                                             100.00     100.00
+  output external delay                                   0.00     100.00
+  data required time                                               100.00
+  --------------------------------------------------------------------------
+  data required time                                               100.00
+  data arrival time                                                 -2.29
+  --------------------------------------------------------------------------
+  slack (MET)                                                       97.71
+
+
+  Startpoint: a[0] (input port)
+  Endpoint: p[15] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  a[0] (in)                                               0.00       0.00 r
+  U72/Y (AND2X1)                                          0.06       0.06 r
+  u_csa1/b[4] (csa_5)                                     0.00       0.06 r
+  u_csa1/U47/Y (XNOR2X1)                                  0.05       0.11 f
+  u_csa1/U22/Y (XOR2X1)                                   0.07       0.18 r
+  u_csa1/sum[4] (csa_5)                                   0.00       0.18 r
+  u_csa3/b[4] (csa_3)                                     0.00       0.18 r
+  u_csa3/U47/Y (XNOR2X1)                                  0.05       0.23 f
+  u_csa3/U22/Y (XOR2X1)                                   0.05       0.28 r
+  u_csa3/sum[4] (csa_3)                                   0.00       0.28 r
+  u_csa4/c[4] (csa_2)                                     0.00       0.28 r
+  u_csa4/U88/Y (INVX1)                                    0.03       0.31 f
+  u_csa4/U22/Y (XOR2X1)                                   0.05       0.36 r
+  u_csa4/sum[4] (csa_2)                                   0.00       0.36 r
+  u_csa5/b[4] (csa_1)                                     0.00       0.36 r
+  u_csa5/U47/Y (XNOR2X1)                                  0.08       0.44 r
+  u_csa5/U22/Y (XOR2X1)                                   0.05       0.49 f
+  u_csa5/sum[4] (csa_1)                                   0.00       0.49 f
+  add_46/A[4] (wallace_multiplier_DW01_add_0)             0.00       0.49 f
+  add_46/U1_4/YC (FAX1)                                   0.09       0.58 f
+  add_46/U1_5/YC (FAX1)                                   0.08       0.66 f
+  add_46/U1_6/YC (FAX1)                                   0.08       0.75 f
+  add_46/U1_7/YC (FAX1)                                   0.08       0.83 f
+  add_46/U1_8/YC (FAX1)                                   0.08       0.91 f
+  add_46/U1_9/YC (FAX1)                                   0.08       0.99 f
+  add_46/U1_10/YC (FAX1)                                  0.08       1.07 f
+  add_46/U1_11/YC (FAX1)                                  0.08       1.15 f
+  add_46/U1_12/YC (FAX1)                                  0.08       1.24 f
+  add_46/U1_13/YC (FAX1)                                  0.08       1.32 f
+  add_46/U1_14/YC (FAX1)                                  0.08       1.40 f
+  add_46/U1_15/YS (FAX1)                                  0.07       1.47 r
+  add_46/U30/Y (BUFX2)                                    0.83       2.29 r
+  add_46/SUM[15] (wallace_multiplier_DW01_add_0)          0.00       2.29 r
+  p[15] (out)                                             0.00       2.29 r
+  data arrival time                                                  2.29
+
+  max_delay                                             100.00     100.00
+  output external delay                                   0.00     100.00
+  data required time                                               100.00
+  --------------------------------------------------------------------------
+  data required time                                               100.00
+  data arrival time                                                 -2.29
+  --------------------------------------------------------------------------
+  slack (MET)                                                       97.71
+
+
+  Startpoint: a[4] (input port)
+  Endpoint: p[15] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 f
+  a[4] (in)                                               0.00       0.00 f
+  U98/Y (AND2X1)                                          0.05       0.05 f
+  u_csa0/a[4] (csa_0)                                     0.00       0.05 f
+  u_csa0/U47/Y (XNOR2X1)                                  0.06       0.11 r
+  u_csa0/U22/Y (XOR2X1)                                   0.05       0.16 r
+  u_csa0/sum[4] (csa_0)                                   0.00       0.16 r
+  u_csa2/c[4] (csa_4)                                     0.00       0.16 r
+  u_csa2/U78/Y (INVX1)                                    0.03       0.20 f
+  u_csa2/U22/Y (XOR2X1)                                   0.05       0.25 r
+  u_csa2/sum[4] (csa_4)                                   0.00       0.25 r
+  u_csa4/a[4] (csa_2)                                     0.00       0.25 r
+  u_csa4/U47/Y (XNOR2X1)                                  0.05       0.29 f
+  u_csa4/U22/Y (XOR2X1)                                   0.07       0.36 r
+  u_csa4/sum[4] (csa_2)                                   0.00       0.36 r
+  u_csa5/b[4] (csa_1)                                     0.00       0.36 r
+  u_csa5/U47/Y (XNOR2X1)                                  0.08       0.44 r
+  u_csa5/U22/Y (XOR2X1)                                   0.05       0.49 f
+  u_csa5/sum[4] (csa_1)                                   0.00       0.49 f
+  add_46/A[4] (wallace_multiplier_DW01_add_0)             0.00       0.49 f
+  add_46/U1_4/YC (FAX1)                                   0.09       0.58 f
+  add_46/U1_5/YC (FAX1)                                   0.08       0.66 f
+  add_46/U1_6/YC (FAX1)                                   0.08       0.75 f
+  add_46/U1_7/YC (FAX1)                                   0.08       0.83 f
+  add_46/U1_8/YC (FAX1)                                   0.08       0.91 f
+  add_46/U1_9/YC (FAX1)                                   0.08       0.99 f
+  add_46/U1_10/YC (FAX1)                                  0.08       1.07 f
+  add_46/U1_11/YC (FAX1)                                  0.08       1.15 f
+  add_46/U1_12/YC (FAX1)                                  0.08       1.23 f
+  add_46/U1_13/YC (FAX1)                                  0.08       1.32 f
+  add_46/U1_14/YC (FAX1)                                  0.08       1.40 f
+  add_46/U1_15/YS (FAX1)                                  0.07       1.46 r
+  add_46/U30/Y (BUFX2)                                    0.83       2.29 r
+  add_46/SUM[15] (wallace_multiplier_DW01_add_0)          0.00       2.29 r
+  p[15] (out)                                             0.00       2.29 r
+  data arrival time                                                  2.29
+
+  max_delay                                             100.00     100.00
+  output external delay                                   0.00     100.00
+  data required time                                               100.00
+  --------------------------------------------------------------------------
+  data required time                                               100.00
+  data arrival time                                                 -2.29
+  --------------------------------------------------------------------------
+  slack (MET)                                                       97.71
+
+
+  Startpoint: b[0] (input port)
+  Endpoint: p[15] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  b[0] (in)                                               0.00       0.00 r
+  U98/Y (AND2X1)                                          0.05       0.05 r
+  u_csa0/a[4] (csa_0)                                     0.00       0.05 r
+  u_csa0/U47/Y (XNOR2X1)                                  0.06       0.11 r
+  u_csa0/U22/Y (XOR2X1)                                   0.05       0.16 r
+  u_csa0/sum[4] (csa_0)                                   0.00       0.16 r
+  u_csa2/c[4] (csa_4)                                     0.00       0.16 r
+  u_csa2/U78/Y (INVX1)                                    0.03       0.19 f
+  u_csa2/U22/Y (XOR2X1)                                   0.05       0.25 r
+  u_csa2/sum[4] (csa_4)                                   0.00       0.25 r
+  u_csa4/a[4] (csa_2)                                     0.00       0.25 r
+  u_csa4/U47/Y (XNOR2X1)                                  0.05       0.29 f
+  u_csa4/U22/Y (XOR2X1)                                   0.07       0.36 r
+  u_csa4/sum[4] (csa_2)                                   0.00       0.36 r
+  u_csa5/b[4] (csa_1)                                     0.00       0.36 r
+  u_csa5/U47/Y (XNOR2X1)                                  0.08       0.44 r
+  u_csa5/U22/Y (XOR2X1)                                   0.05       0.49 f
+  u_csa5/sum[4] (csa_1)                                   0.00       0.49 f
+  add_46/A[4] (wallace_multiplier_DW01_add_0)             0.00       0.49 f
+  add_46/U1_4/YC (FAX1)                                   0.09       0.58 f
+  add_46/U1_5/YC (FAX1)                                   0.08       0.66 f
+  add_46/U1_6/YC (FAX1)                                   0.08       0.74 f
+  add_46/U1_7/YC (FAX1)                                   0.08       0.83 f
+  add_46/U1_8/YC (FAX1)                                   0.08       0.91 f
+  add_46/U1_9/YC (FAX1)                                   0.08       0.99 f
+  add_46/U1_10/YC (FAX1)                                  0.08       1.07 f
+  add_46/U1_11/YC (FAX1)                                  0.08       1.15 f
+  add_46/U1_12/YC (FAX1)                                  0.08       1.23 f
+  add_46/U1_13/YC (FAX1)                                  0.08       1.31 f
+  add_46/U1_14/YC (FAX1)                                  0.08       1.40 f
+  add_46/U1_15/YS (FAX1)                                  0.07       1.46 r
+  add_46/U30/Y (BUFX2)                                    0.83       2.29 r
+  add_46/SUM[15] (wallace_multiplier_DW01_add_0)          0.00       2.29 r
+  p[15] (out)                                             0.00       2.29 r
+  data arrival time                                                  2.29
+
+  max_delay                                             100.00     100.00
+  output external delay                                   0.00     100.00
+  data required time                                               100.00
+  --------------------------------------------------------------------------
+  data required time                                               100.00
+  data arrival time                                                 -2.29
+  --------------------------------------------------------------------------
+  slack (MET)                                                       97.71
+
+
+  Startpoint: a[0] (input port)
+  Endpoint: p[15] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  a[0] (in)                                               0.00       0.00 r
+  U72/Y (AND2X1)                                          0.06       0.06 r
+  u_csa1/b[4] (csa_5)                                     0.00       0.06 r
+  u_csa1/U47/Y (XNOR2X1)                                  0.07       0.14 r
+  u_csa1/U22/Y (XOR2X1)                                   0.05       0.18 f
+  u_csa1/sum[4] (csa_5)                                   0.00       0.18 f
+  u_csa3/b[4] (csa_3)                                     0.00       0.18 f
+  u_csa3/U47/Y (XNOR2X1)                                  0.04       0.22 f
+  u_csa3/U22/Y (XOR2X1)                                   0.05       0.27 r
+  u_csa3/sum[4] (csa_3)                                   0.00       0.27 r
+  u_csa4/c[4] (csa_2)                                     0.00       0.27 r
+  u_csa4/U88/Y (INVX1)                                    0.03       0.31 f
+  u_csa4/U22/Y (XOR2X1)                                   0.05       0.36 r
+  u_csa4/sum[4] (csa_2)                                   0.00       0.36 r
+  u_csa5/b[4] (csa_1)                                     0.00       0.36 r
+  u_csa5/U47/Y (XNOR2X1)                                  0.08       0.44 r
+  u_csa5/U22/Y (XOR2X1)                                   0.05       0.49 f
+  u_csa5/sum[4] (csa_1)                                   0.00       0.49 f
+  add_46/A[4] (wallace_multiplier_DW01_add_0)             0.00       0.49 f
+  add_46/U1_4/YC (FAX1)                                   0.09       0.58 f
+  add_46/U1_5/YC (FAX1)                                   0.08       0.66 f
+  add_46/U1_6/YC (FAX1)                                   0.08       0.74 f
+  add_46/U1_7/YC (FAX1)                                   0.08       0.82 f
+  add_46/U1_8/YC (FAX1)                                   0.08       0.91 f
+  add_46/U1_9/YC (FAX1)                                   0.08       0.99 f
+  add_46/U1_10/YC (FAX1)                                  0.08       1.07 f
+  add_46/U1_11/YC (FAX1)                                  0.08       1.15 f
+  add_46/U1_12/YC (FAX1)                                  0.08       1.23 f
+  add_46/U1_13/YC (FAX1)                                  0.08       1.31 f
+  add_46/U1_14/YC (FAX1)                                  0.08       1.40 f
+  add_46/U1_15/YS (FAX1)                                  0.07       1.46 r
+  add_46/U30/Y (BUFX2)                                    0.83       2.29 r
+  add_46/SUM[15] (wallace_multiplier_DW01_add_0)          0.00       2.29 r
+  p[15] (out)                                             0.00       2.29 r
+  data arrival time                                                  2.29
+
+  max_delay                                             100.00     100.00
+  output external delay                                   0.00     100.00
+  data required time                                               100.00
+  --------------------------------------------------------------------------
+  data required time                                               100.00
+  data arrival time                                                 -2.29
+  --------------------------------------------------------------------------
+  slack (MET)                                                       97.71
+
+
+  Startpoint: a[0] (input port)
+  Endpoint: p[15] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  a[0] (in)                                               0.00       0.00 r
+  U72/Y (AND2X1)                                          0.06       0.06 r
+  u_csa1/b[4] (csa_5)                                     0.00       0.06 r
+  u_csa1/U47/Y (XNOR2X1)                                  0.05       0.11 f
+  u_csa1/U22/Y (XOR2X1)                                   0.07       0.18 r
+  u_csa1/sum[4] (csa_5)                                   0.00       0.18 r
+  u_csa3/b[4] (csa_3)                                     0.00       0.18 r
+  u_csa3/U47/Y (XNOR2X1)                                  0.07       0.25 r
+  u_csa3/U22/Y (XOR2X1)                                   0.04       0.29 f
+  u_csa3/sum[4] (csa_3)                                   0.00       0.29 f
+  u_csa4/c[4] (csa_2)                                     0.00       0.29 f
+  u_csa4/U88/Y (INVX1)                                    0.02       0.31 r
+  u_csa4/U22/Y (XOR2X1)                                   0.05       0.36 r
+  u_csa4/sum[4] (csa_2)                                   0.00       0.36 r
+  u_csa5/b[4] (csa_1)                                     0.00       0.36 r
+  u_csa5/U47/Y (XNOR2X1)                                  0.08       0.44 r
+  u_csa5/U22/Y (XOR2X1)                                   0.05       0.49 f
+  u_csa5/sum[4] (csa_1)                                   0.00       0.49 f
+  add_46/A[4] (wallace_multiplier_DW01_add_0)             0.00       0.49 f
+  add_46/U1_4/YC (FAX1)                                   0.09       0.58 f
+  add_46/U1_5/YC (FAX1)                                   0.08       0.66 f
+  add_46/U1_6/YC (FAX1)                                   0.08       0.74 f
+  add_46/U1_7/YC (FAX1)                                   0.08       0.82 f
+  add_46/U1_8/YC (FAX1)                                   0.08       0.91 f
+  add_46/U1_9/YC (FAX1)                                   0.08       0.99 f
+  add_46/U1_10/YC (FAX1)                                  0.08       1.07 f
+  add_46/U1_11/YC (FAX1)                                  0.08       1.15 f
+  add_46/U1_12/YC (FAX1)                                  0.08       1.23 f
+  add_46/U1_13/YC (FAX1)                                  0.08       1.31 f
+  add_46/U1_14/YC (FAX1)                                  0.08       1.39 f
+  add_46/U1_15/YS (FAX1)                                  0.07       1.46 r
+  add_46/U30/Y (BUFX2)                                    0.83       2.29 r
+  add_46/SUM[15] (wallace_multiplier_DW01_add_0)          0.00       2.29 r
+  p[15] (out)                                             0.00       2.29 r
+  data arrival time                                                  2.29
+
+  max_delay                                             100.00     100.00
+  output external delay                                   0.00     100.00
+  data required time                                               100.00
+  --------------------------------------------------------------------------
+  data required time                                               100.00
+  data arrival time                                                 -2.29
+  --------------------------------------------------------------------------
+  slack (MET)                                                       97.71
+
+
+1

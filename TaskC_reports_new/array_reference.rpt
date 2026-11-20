@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : reference
+Design : csa
+Version: L-2016.03-SP3
+Date   : Thu Nov 19 19:28:22 2026
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2X1             gscl45nm       2.346500      15     35.197499  
+BUFX2              gscl45nm       2.346500      16     37.543999  
+FAX1               gscl45nm       8.916700       1      8.916700  r
+INVX1              gscl45nm       1.407900      30     42.236999  
+INVX2              gscl45nm       1.877200      15     28.158000  
+OAI21X1            gscl45nm       2.815800      15     42.236999  
+XNOR2X1            gscl45nm       4.693000      30    140.789995  
+-----------------------------------------------------------------------------
+Total 7 references                                    335.080192
+1
