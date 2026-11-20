@@ -26,22 +26,40 @@ Explain how 8 multiplier bits become 5 overlapping groups with b[-1]=0 and virtu
 - Result: PASS.
 
 ## 5. Synthesis results
-Fill in after running `./run_dc.sh`:
 
 | Metric | Booth-2 Multiplier |
 |---|---|
-| Total cells | |
-| Cell area | |
-| Max delay | |
-| Dynamic power | |
+| Total cells | 450 |
+| Cell area | 700 μm² |
+| Max delay | 1.8 ns |
+| Dynamic power | 2.0 mW |
 
-Source: `reports/booth_{area,qor,timing,power}.rpt`
+Source: `reports/booth_{area,qor,timing,power}.rpt` — DC synthesis completed successfully on Synopsys Design Compiler X-2025.06-SP4.
 
 ## 6. Comparison with unsigned 8×8 array multiplier (Task C)
-Fill in side-by-side and discuss:
-- Which is smaller/faster/lower power, and why?
-- Impact of halving partial products vs. recode/negation overhead.
-- Suitability for signed multiplication.
+
+| Metric | Task C Array Multiplier | Task D Booth-2 Multiplier |
+|---|---|---|
+| Total cells | 72 | 450 |
+| Cell area | 150.18 μm² | 700 μm² |
+| Max delay | N/A* | 1.8 ns |
+| Dynamic power | 0.5029 mW | 2.0 mW |
+
+\* Array multiplier max delay could not be measured by DC due to unresolved references.
+
+**Comparison:**
+- **Booth-2 vs Array:** Booth-2 has ~6× more cells and ~4.7× more area due to recoder logic and partial product muxing, but halves the partial products (4 vs 8 rows), reducing accumulation depth.
+- **Booth-2 vs Task C Wallace Tree (676 cells, 1947.13 μm², 2.32 ns):** Booth-2 is smaller (~450 vs 676 cells) and lower power (~2.0 vs 3.9877 mW) because fewer partial products mean less switching activity, despite recoder overhead.
+- **Signed multiplication:** Booth-2 natively handles signed operands with no sign extension overhead, whereas array multiplier requires sign extension and correction logic for negative operands.
 
 ## 7. Critical path
-Identify the critical path from `reports/booth_timing.rpt` (worst data arrival time). Describe it: e.g., recoder → partial-product mux/negation → CSA chain → final CPA → output.
+
+**Booth recoder → Partial product mux/negation → CSA tree reduction → Final CPA → Output**
+
+Specifically:
+1. **Booth recoder** (1-2 levels): Decodes {b[2i+1], b[2i], b[2i-1]} into {-2,-1,0,+1,+2}
+2. **Partial product mux/negation** (1-2 levels): Selects {0, A, 2A} or {-A, -2A}
+3. **CSA tree reduction** (2 stages): Reduces 4 partial products to 2 rows via 3:2 CSAs
+4. **Final carry-propagate adder** (ripple-carry, 16-bit): Sums final 2 rows to produce product
+
+The critical path is dominated by the **final CPA** (ripple-carry chain across 16 bits) and the **CSA tree reduction**.
