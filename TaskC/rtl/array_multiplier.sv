@@ -46,15 +46,22 @@ module array_multiplier #(
     //======================================================================
     // SystemVerilog Assertions (SVA) — for formal verification / simulation
     //======================================================================
-
+// synthesis translate_off
     // Output range: unsigned 8x8 product fits in [0, 2^(2N)-1]
-    assert output_range : !$isunknown(p) |-> (p >= 0) && (p <= {2*N{1'b1}});
+    assert property (output_range :
+        !$isunknown(p) |-> (p >= 0) && (p <= {2*N{1'b1}})
+    );
 
     // No X/Z on primary outputs when inputs are valid
-    assert outputs_valid : !$isunknown(a) && !$isunknown(b) |-> !$isunknown(p);
+    assert property (outputs_valid :
+        !$isunknown(a) && !$isunknown(b) |-> !$isunknown(p)
+    );
 
     // Combinational stability: output must not be X when inputs are stable
-    assert no_x_propagation : !$isunknown(a) && !$isunknown(b) |-> !$isunknown(p);
+    assert property (no_x_propagation :
+        !$isunknown(a) && !$isunknown(b) |-> !$isunknown(p)
+    );
+// synthesis translate_on
 
 endmodule
 
