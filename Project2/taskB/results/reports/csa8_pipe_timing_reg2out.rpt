@@ -1,0 +1,52 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : csa8_pipe
+Version: X-2025.06-SP4
+Date   : Mon Nov 16 20:59:56 2026
+****************************************
+
+Operating Conditions: typical   Library: gscl45nm
+Wire Load Model Mode: top
+
+  Startpoint: c_lo_reg_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: S[7] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.20       0.20
+  c_lo_reg_reg/CLK (DFFSR)                 0.00       0.20 r
+  c_lo_reg_reg/Q (DFFSR)                   0.11       0.31 r
+  U120/Y (BUFX2)                           0.05       0.35 r
+  U132/Y (INVX1)                           0.03       0.39 f
+  U59/Y (AOI22X1)                          0.04       0.43 r
+  U115/Y (BUFX2)                           0.05       0.48 r
+  U127/Y (INVX1)                           0.03       0.51 f
+  U58/Y (AOI22X1)                          0.03       0.54 r
+  U110/Y (BUFX2)                           0.05       0.59 r
+  U128/Y (INVX1)                           0.03       0.62 f
+  U51/Y (AOI22X1)                          0.03       0.65 r
+  U73/Y (BUFX2)                            0.03       0.69 r
+  U135/Y (INVX1)                           0.01       0.70 f
+  S[7] (out)                               0.00       0.70 f
+  data arrival time                                   0.70
+
+  clock clk (rise edge)                    2.00       2.00
+  clock network delay (ideal)              0.20       2.20
+  output external delay                    0.00       2.20
+  data required time                                  2.20
+  -----------------------------------------------------------
+  data required time                                  2.20
+  data arrival time                                  -0.70
+  -----------------------------------------------------------
+  slack (MET)                                         1.50
+
+
+1

@@ -1,0 +1,40 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : rca4_pipe
+Version: X-2025.06-SP4
+Date   : Tue Nov 17 20:23:32 2026
+****************************************
+
+Operating Conditions: typical   Library: gscl45nm
+Wire Load Model Mode: top
+
+  Startpoint: Cout_reg (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Cout (output port clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.20       0.20
+  Cout_reg/CLK (DFFSR)                     0.00       0.20 r
+  Cout_reg/Q (DFFSR)                       0.10       0.30 r
+  Cout (out)                               0.00       0.30 r
+  data arrival time                                   0.30
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.20       0.20
+  output external delay                    0.00       0.20
+  data required time                                  0.20
+  -----------------------------------------------------------
+  data required time                                  0.20
+  data arrival time                                  -0.30
+  -----------------------------------------------------------
+  slack (MET)                                         0.10
+
+
+1
