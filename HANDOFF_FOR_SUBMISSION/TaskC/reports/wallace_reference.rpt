@@ -1,0 +1,32 @@
+ 
+****************************************
+Report : reference
+Design : wallace_multiplier
+Version: L-2016.03-SP3
+Date   : Thu Nov 19 19:38:15 2026
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2X1             gscl45nm       2.346500      64    150.175995  
+csa_0                           269.378193       1    269.378193  h
+csa_1                           271.255393       1    271.255393  h
+csa_2                           269.378193       1    269.378193  h
+csa_3                           269.378193       1    269.378193  h
+csa_4                           269.378193       1    269.378193  h
+csa_5                           269.378193       1    269.378193  h
+wallace_multiplier_DW01_add_0   178.803305       1    178.803305  h
+-----------------------------------------------------------------------------
+Total 8 references                                   1947.125657
+1

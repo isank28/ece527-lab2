@@ -1,0 +1,266 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 10
+        -max_paths 10
+Design : csa
+Version: L-2016.03-SP3
+Date   : Thu Nov 19 19:42:46 2026
+****************************************
+
+Operating Conditions: typical   Library: gscl45nm
+Wire Load Model Mode: top
+
+  Startpoint: b[14] (input port)
+  Endpoint: carry[15] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  b[14] (in)                               0.00       0.00 r
+  U62/Y (XNOR2X1)                          0.04       0.04 f
+  U60/Y (OAI21X1)                          0.04       0.08 r
+  U78/Y (BUFX2)                            0.82       0.91 r
+  carry[15] (out)                          0.00       0.91 r
+  data arrival time                                   0.91
+
+  max_delay                              100.00     100.00
+  output external delay                    0.00     100.00
+  data required time                                100.00
+  -----------------------------------------------------------
+  data required time                                100.00
+  data arrival time                                  -0.91
+  -----------------------------------------------------------
+  slack (MET)                                        99.09
+
+
+  Startpoint: b[13] (input port)
+  Endpoint: carry[14] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  b[13] (in)                               0.00       0.00 r
+  U65/Y (XNOR2X1)                          0.04       0.04 f
+  U63/Y (OAI21X1)                          0.04       0.08 r
+  U81/Y (BUFX2)                            0.82       0.91 r
+  carry[14] (out)                          0.00       0.91 r
+  data arrival time                                   0.91
+
+  max_delay                              100.00     100.00
+  output external delay                    0.00     100.00
+  data required time                                100.00
+  -----------------------------------------------------------
+  data required time                                100.00
+  data arrival time                                  -0.91
+  -----------------------------------------------------------
+  slack (MET)                                        99.09
+
+
+  Startpoint: b[12] (input port)
+  Endpoint: carry[13] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  b[12] (in)                               0.00       0.00 r
+  U68/Y (XNOR2X1)                          0.04       0.04 f
+  U66/Y (OAI21X1)                          0.04       0.08 r
+  U84/Y (BUFX2)                            0.82       0.91 r
+  carry[13] (out)                          0.00       0.91 r
+  data arrival time                                   0.91
+
+  max_delay                              100.00     100.00
+  output external delay                    0.00     100.00
+  data required time                                100.00
+  -----------------------------------------------------------
+  data required time                                100.00
+  data arrival time                                  -0.91
+  -----------------------------------------------------------
+  slack (MET)                                        99.09
+
+
+  Startpoint: b[11] (input port)
+  Endpoint: carry[12] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  b[11] (in)                               0.00       0.00 r
+  U71/Y (XNOR2X1)                          0.04       0.04 f
+  U69/Y (OAI21X1)                          0.04       0.08 r
+  U87/Y (BUFX2)                            0.82       0.91 r
+  carry[12] (out)                          0.00       0.91 r
+  data arrival time                                   0.91
+
+  max_delay                              100.00     100.00
+  output external delay                    0.00     100.00
+  data required time                                100.00
+  -----------------------------------------------------------
+  data required time                                100.00
+  data arrival time                                  -0.91
+  -----------------------------------------------------------
+  slack (MET)                                        99.09
+
+
+  Startpoint: b[10] (input port)
+  Endpoint: carry[11] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  b[10] (in)                               0.00       0.00 r
+  U74/Y (XNOR2X1)                          0.04       0.04 f
+  U72/Y (OAI21X1)                          0.04       0.08 r
+  U90/Y (BUFX2)                            0.82       0.91 r
+  carry[11] (out)                          0.00       0.91 r
+  data arrival time                                   0.91
+
+  max_delay                              100.00     100.00
+  output external delay                    0.00     100.00
+  data required time                                100.00
+  -----------------------------------------------------------
+  data required time                                100.00
+  data arrival time                                  -0.91
+  -----------------------------------------------------------
+  slack (MET)                                        99.09
+
+
+  Startpoint: b[9] (input port)
+  Endpoint: carry[10] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  b[9] (in)                                0.00       0.00 r
+  U77/Y (XNOR2X1)                          0.04       0.04 f
+  U75/Y (OAI21X1)                          0.04       0.08 r
+  U93/Y (BUFX2)                            0.82       0.91 r
+  carry[10] (out)                          0.00       0.91 r
+  data arrival time                                   0.91
+
+  max_delay                              100.00     100.00
+  output external delay                    0.00     100.00
+  data required time                                100.00
+  -----------------------------------------------------------
+  data required time                                100.00
+  data arrival time                                  -0.91
+  -----------------------------------------------------------
+  slack (MET)                                        99.09
+
+
+  Startpoint: b[3] (input port)
+  Endpoint: carry[4] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  b[3] (in)                                0.00       0.00 r
+  U50/Y (XNOR2X1)                          0.04       0.04 f
+  U48/Y (OAI21X1)                          0.04       0.08 r
+  U111/Y (BUFX2)                           0.82       0.91 r
+  carry[4] (out)                           0.00       0.91 r
+  data arrival time                                   0.91
+
+  max_delay                              100.00     100.00
+  output external delay                    0.00     100.00
+  data required time                                100.00
+  -----------------------------------------------------------
+  data required time                                100.00
+  data arrival time                                  -0.91
+  -----------------------------------------------------------
+  slack (MET)                                        99.09
+
+
+  Startpoint: b[2] (input port)
+  Endpoint: carry[3] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  b[2] (in)                                0.00       0.00 r
+  U53/Y (XNOR2X1)                          0.04       0.04 f
+  U51/Y (OAI21X1)                          0.04       0.08 r
+  U114/Y (BUFX2)                           0.82       0.91 r
+  carry[3] (out)                           0.00       0.91 r
+  data arrival time                                   0.91
+
+  max_delay                              100.00     100.00
+  output external delay                    0.00     100.00
+  data required time                                100.00
+  -----------------------------------------------------------
+  data required time                                100.00
+  data arrival time                                  -0.91
+  -----------------------------------------------------------
+  slack (MET)                                        99.09
+
+
+  Startpoint: b[1] (input port)
+  Endpoint: carry[2] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  b[1] (in)                                0.00       0.00 r
+  U56/Y (XNOR2X1)                          0.04       0.04 f
+  U54/Y (OAI21X1)                          0.04       0.08 r
+  U117/Y (BUFX2)                           0.82       0.91 r
+  carry[2] (out)                           0.00       0.91 r
+  data arrival time                                   0.91
+
+  max_delay                              100.00     100.00
+  output external delay                    0.00     100.00
+  data required time                                100.00
+  -----------------------------------------------------------
+  data required time                                100.00
+  data arrival time                                  -0.91
+  -----------------------------------------------------------
+  slack (MET)                                        99.09
+
+
+  Startpoint: b[0] (input port)
+  Endpoint: carry[1] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  b[0] (in)                                0.00       0.00 r
+  U59/Y (XNOR2X1)                          0.04       0.04 f
+  U57/Y (OAI21X1)                          0.04       0.08 r
+  U120/Y (BUFX2)                           0.82       0.91 r
+  carry[1] (out)                           0.00       0.91 r
+  data arrival time                                   0.91
+
+  max_delay                              100.00     100.00
+  output external delay                    0.00     100.00
+  data required time                                100.00
+  -----------------------------------------------------------
+  data required time                                100.00
+  data arrival time                                  -0.91
+  -----------------------------------------------------------
+  slack (MET)                                        99.09
+
+
+1

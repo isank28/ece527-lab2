@@ -1,0 +1,380 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 10
+        -max_paths 10
+Design : wallace_multiplier
+Version: X-2025.06-SP4
+Date   : Thu Nov 19 22:45:40 2026
+****************************************
+
+Operating Conditions: nom_pvt   Library: gtech
+Wire Load Model Mode: top
+
+  Startpoint: a[0] (input port)
+  Endpoint: p[2] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  a[0] (in)                                               0.00       0.00 r
+  C86/Z (GTECH_AND2)                                      0.00       0.00 r
+  u_csa0/b[1] (csa)                                       0.00       0.00 r
+  u_csa0/C77/Z (GTECH_AND2)                               0.00       0.00 r
+  u_csa0/C76/Z (GTECH_OR2)                                0.00       0.00 r
+  u_csa0/C75/Z (GTECH_OR2)                                0.00       0.00 r
+  u_csa0/carry[2] (csa)                                   0.00       0.00 r
+  u_csa3/a[2] (csa)                                       0.00       0.00 r
+  u_csa3/C65/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa3/C64/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa3/sum[2] (csa)                                     0.00       0.00 r
+  u_csa4/c[2] (csa)                                       0.00       0.00 r
+  u_csa4/C64/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa4/sum[2] (csa)                                     0.00       0.00 r
+  u_csa5/b[2] (csa)                                       0.00       0.00 r
+  u_csa5/C65/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa5/C64/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa5/sum[2] (csa)                                     0.00       0.00 r
+  add_46/A_2 (*ADD_UNS_OP_16_16_16)                       0.00       0.00 r
+  add_46/*cell*21/A[2] (DW01_add_width16)                 0.00       0.00 r
+  ...
+  add_46/*cell*21/SUM[2] (DW01_add_width16)               0.00       0.00 r
+  add_46/Z_2 (*ADD_UNS_OP_16_16_16)                       0.00       0.00 r
+  p[2] (out)                                              0.00       0.00 r
+  data arrival time                                                  0.00
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: a[1] (input port)
+  Endpoint: p[2] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  a[1] (in)                                               0.00       0.00 r
+  C77/Z (GTECH_AND2)                                      0.00       0.00 r
+  u_csa0/a[1] (csa)                                       0.00       0.00 r
+  u_csa0/C77/Z (GTECH_AND2)                               0.00       0.00 r
+  u_csa0/C76/Z (GTECH_OR2)                                0.00       0.00 r
+  u_csa0/C75/Z (GTECH_OR2)                                0.00       0.00 r
+  u_csa0/carry[2] (csa)                                   0.00       0.00 r
+  u_csa3/a[2] (csa)                                       0.00       0.00 r
+  u_csa3/C65/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa3/C64/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa3/sum[2] (csa)                                     0.00       0.00 r
+  u_csa4/c[2] (csa)                                       0.00       0.00 r
+  u_csa4/C64/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa4/sum[2] (csa)                                     0.00       0.00 r
+  u_csa5/b[2] (csa)                                       0.00       0.00 r
+  u_csa5/C65/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa5/C64/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa5/sum[2] (csa)                                     0.00       0.00 r
+  add_46/A_2 (*ADD_UNS_OP_16_16_16)                       0.00       0.00 r
+  add_46/*cell*21/A[2] (DW01_add_width16)                 0.00       0.00 r
+  ...
+  add_46/*cell*21/SUM[2] (DW01_add_width16)               0.00       0.00 r
+  add_46/Z_2 (*ADD_UNS_OP_16_16_16)                       0.00       0.00 r
+  p[2] (out)                                              0.00       0.00 r
+  data arrival time                                                  0.00
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: b[0] (input port)
+  Endpoint: p[2] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  b[0] (in)                                               0.00       0.00 r
+  C77/Z (GTECH_AND2)                                      0.00       0.00 r
+  u_csa0/a[1] (csa)                                       0.00       0.00 r
+  u_csa0/C77/Z (GTECH_AND2)                               0.00       0.00 r
+  u_csa0/C76/Z (GTECH_OR2)                                0.00       0.00 r
+  u_csa0/C75/Z (GTECH_OR2)                                0.00       0.00 r
+  u_csa0/carry[2] (csa)                                   0.00       0.00 r
+  u_csa3/a[2] (csa)                                       0.00       0.00 r
+  u_csa3/C65/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa3/C64/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa3/sum[2] (csa)                                     0.00       0.00 r
+  u_csa4/c[2] (csa)                                       0.00       0.00 r
+  u_csa4/C64/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa4/sum[2] (csa)                                     0.00       0.00 r
+  u_csa5/b[2] (csa)                                       0.00       0.00 r
+  u_csa5/C65/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa5/C64/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa5/sum[2] (csa)                                     0.00       0.00 r
+  add_46/A_2 (*ADD_UNS_OP_16_16_16)                       0.00       0.00 r
+  add_46/*cell*21/A[2] (DW01_add_width16)                 0.00       0.00 r
+  ...
+  add_46/*cell*21/SUM[2] (DW01_add_width16)               0.00       0.00 r
+  add_46/Z_2 (*ADD_UNS_OP_16_16_16)                       0.00       0.00 r
+  p[2] (out)                                              0.00       0.00 r
+  data arrival time                                                  0.00
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: b[1] (input port)
+  Endpoint: p[2] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  b[1] (in)                                               0.00       0.00 r
+  C86/Z (GTECH_AND2)                                      0.00       0.00 r
+  u_csa0/b[1] (csa)                                       0.00       0.00 r
+  u_csa0/C77/Z (GTECH_AND2)                               0.00       0.00 r
+  u_csa0/C76/Z (GTECH_OR2)                                0.00       0.00 r
+  u_csa0/C75/Z (GTECH_OR2)                                0.00       0.00 r
+  u_csa0/carry[2] (csa)                                   0.00       0.00 r
+  u_csa3/a[2] (csa)                                       0.00       0.00 r
+  u_csa3/C65/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa3/C64/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa3/sum[2] (csa)                                     0.00       0.00 r
+  u_csa4/c[2] (csa)                                       0.00       0.00 r
+  u_csa4/C64/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa4/sum[2] (csa)                                     0.00       0.00 r
+  u_csa5/b[2] (csa)                                       0.00       0.00 r
+  u_csa5/C65/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa5/C64/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa5/sum[2] (csa)                                     0.00       0.00 r
+  add_46/A_2 (*ADD_UNS_OP_16_16_16)                       0.00       0.00 r
+  add_46/*cell*21/A[2] (DW01_add_width16)                 0.00       0.00 r
+  ...
+  add_46/*cell*21/SUM[2] (DW01_add_width16)               0.00       0.00 r
+  add_46/Z_2 (*ADD_UNS_OP_16_16_16)                       0.00       0.00 r
+  p[2] (out)                                              0.00       0.00 r
+  data arrival time                                                  0.00
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: a[0] (input port)
+  Endpoint: p[1] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  a[0] (in)                                               0.00       0.00 r
+  C86/Z (GTECH_AND2)                                      0.00       0.00 r
+  u_csa0/b[1] (csa)                                       0.00       0.00 r
+  u_csa0/C67/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa0/C66/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa0/sum[1] (csa)                                     0.00       0.00 r
+  u_csa2/c[1] (csa)                                       0.00       0.00 r
+  u_csa2/C66/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa2/sum[1] (csa)                                     0.00       0.00 r
+  u_csa4/a[1] (csa)                                       0.00       0.00 r
+  u_csa4/C67/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa4/C66/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa4/sum[1] (csa)                                     0.00       0.00 r
+  u_csa5/b[1] (csa)                                       0.00       0.00 r
+  u_csa5/C67/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa5/C66/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa5/sum[1] (csa)                                     0.00       0.00 r
+  add_46/A_1 (*ADD_UNS_OP_16_16_16)                       0.00       0.00 r
+  add_46/*cell*21/A[1] (DW01_add_width16)                 0.00       0.00 r
+  ...
+  add_46/*cell*21/SUM[1] (DW01_add_width16)               0.00       0.00 r
+  add_46/Z_1 (*ADD_UNS_OP_16_16_16)                       0.00       0.00 r
+  p[1] (out)                                              0.00       0.00 r
+  data arrival time                                                  0.00
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: a[1] (input port)
+  Endpoint: p[1] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  a[1] (in)                                               0.00       0.00 r
+  C77/Z (GTECH_AND2)                                      0.00       0.00 r
+  u_csa0/a[1] (csa)                                       0.00       0.00 r
+  u_csa0/C67/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa0/C66/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa0/sum[1] (csa)                                     0.00       0.00 r
+  u_csa2/c[1] (csa)                                       0.00       0.00 r
+  u_csa2/C66/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa2/sum[1] (csa)                                     0.00       0.00 r
+  u_csa4/a[1] (csa)                                       0.00       0.00 r
+  u_csa4/C67/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa4/C66/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa4/sum[1] (csa)                                     0.00       0.00 r
+  u_csa5/b[1] (csa)                                       0.00       0.00 r
+  u_csa5/C67/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa5/C66/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa5/sum[1] (csa)                                     0.00       0.00 r
+  add_46/A_1 (*ADD_UNS_OP_16_16_16)                       0.00       0.00 r
+  add_46/*cell*21/A[1] (DW01_add_width16)                 0.00       0.00 r
+  ...
+  add_46/*cell*21/SUM[1] (DW01_add_width16)               0.00       0.00 r
+  add_46/Z_1 (*ADD_UNS_OP_16_16_16)                       0.00       0.00 r
+  p[1] (out)                                              0.00       0.00 r
+  data arrival time                                                  0.00
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: b[0] (input port)
+  Endpoint: p[1] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  b[0] (in)                                               0.00       0.00 r
+  C77/Z (GTECH_AND2)                                      0.00       0.00 r
+  u_csa0/a[1] (csa)                                       0.00       0.00 r
+  u_csa0/C67/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa0/C66/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa0/sum[1] (csa)                                     0.00       0.00 r
+  u_csa2/c[1] (csa)                                       0.00       0.00 r
+  u_csa2/C66/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa2/sum[1] (csa)                                     0.00       0.00 r
+  u_csa4/a[1] (csa)                                       0.00       0.00 r
+  u_csa4/C67/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa4/C66/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa4/sum[1] (csa)                                     0.00       0.00 r
+  u_csa5/b[1] (csa)                                       0.00       0.00 r
+  u_csa5/C67/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa5/C66/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa5/sum[1] (csa)                                     0.00       0.00 r
+  add_46/A_1 (*ADD_UNS_OP_16_16_16)                       0.00       0.00 r
+  add_46/*cell*21/A[1] (DW01_add_width16)                 0.00       0.00 r
+  ...
+  add_46/*cell*21/SUM[1] (DW01_add_width16)               0.00       0.00 r
+  add_46/Z_1 (*ADD_UNS_OP_16_16_16)                       0.00       0.00 r
+  p[1] (out)                                              0.00       0.00 r
+  data arrival time                                                  0.00
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: b[1] (input port)
+  Endpoint: p[1] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  b[1] (in)                                               0.00       0.00 r
+  C86/Z (GTECH_AND2)                                      0.00       0.00 r
+  u_csa0/b[1] (csa)                                       0.00       0.00 r
+  u_csa0/C67/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa0/C66/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa0/sum[1] (csa)                                     0.00       0.00 r
+  u_csa2/c[1] (csa)                                       0.00       0.00 r
+  u_csa2/C66/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa2/sum[1] (csa)                                     0.00       0.00 r
+  u_csa4/a[1] (csa)                                       0.00       0.00 r
+  u_csa4/C67/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa4/C66/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa4/sum[1] (csa)                                     0.00       0.00 r
+  u_csa5/b[1] (csa)                                       0.00       0.00 r
+  u_csa5/C67/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa5/C66/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa5/sum[1] (csa)                                     0.00       0.00 r
+  add_46/A_1 (*ADD_UNS_OP_16_16_16)                       0.00       0.00 r
+  add_46/*cell*21/A[1] (DW01_add_width16)                 0.00       0.00 r
+  ...
+  add_46/*cell*21/SUM[1] (DW01_add_width16)               0.00       0.00 r
+  add_46/Z_1 (*ADD_UNS_OP_16_16_16)                       0.00       0.00 r
+  p[1] (out)                                              0.00       0.00 r
+  data arrival time                                                  0.00
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: a[0] (input port)
+  Endpoint: p[0] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  a[0] (in)                                               0.00       0.00 r
+  C78/Z (GTECH_AND2)                                      0.00       0.00 r
+  u_csa0/a[0] (csa)                                       0.00       0.00 r
+  u_csa0/C69/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa0/C68/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa0/sum[0] (csa)                                     0.00       0.00 r
+  u_csa2/c[0] (csa)                                       0.00       0.00 r
+  u_csa2/C68/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa2/sum[0] (csa)                                     0.00       0.00 r
+  u_csa4/a[0] (csa)                                       0.00       0.00 r
+  u_csa4/C69/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa4/C68/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa4/sum[0] (csa)                                     0.00       0.00 r
+  u_csa5/b[0] (csa)                                       0.00       0.00 r
+  u_csa5/C69/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa5/C68/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa5/sum[0] (csa)                                     0.00       0.00 r
+  add_46/A_0 (*ADD_UNS_OP_16_16_16)                       0.00       0.00 r
+  add_46/*cell*21/A[0] (DW01_add_width16)                 0.00       0.00 r
+  ...
+  add_46/*cell*21/SUM[0] (DW01_add_width16)               0.00       0.00 r
+  add_46/Z_0 (*ADD_UNS_OP_16_16_16)                       0.00       0.00 r
+  p[0] (out)                                              0.00       0.00 r
+  data arrival time                                                  0.00
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: b[0] (input port)
+  Endpoint: p[0] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  b[0] (in)                                               0.00       0.00 r
+  C78/Z (GTECH_AND2)                                      0.00       0.00 r
+  u_csa0/a[0] (csa)                                       0.00       0.00 r
+  u_csa0/C69/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa0/C68/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa0/sum[0] (csa)                                     0.00       0.00 r
+  u_csa2/c[0] (csa)                                       0.00       0.00 r
+  u_csa2/C68/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa2/sum[0] (csa)                                     0.00       0.00 r
+  u_csa4/a[0] (csa)                                       0.00       0.00 r
+  u_csa4/C69/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa4/C68/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa4/sum[0] (csa)                                     0.00       0.00 r
+  u_csa5/b[0] (csa)                                       0.00       0.00 r
+  u_csa5/C69/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa5/C68/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa5/sum[0] (csa)                                     0.00       0.00 r
+  add_46/A_0 (*ADD_UNS_OP_16_16_16)                       0.00       0.00 r
+  add_46/*cell*21/A[0] (DW01_add_width16)                 0.00       0.00 r
+  ...
+  add_46/*cell*21/SUM[0] (DW01_add_width16)               0.00       0.00 r
+  add_46/Z_0 (*ADD_UNS_OP_16_16_16)                       0.00       0.00 r
+  p[0] (out)                                              0.00       0.00 r
+  data arrival time                                                  0.00
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

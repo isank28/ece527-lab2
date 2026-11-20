@@ -1,0 +1,32 @@
+ 
+****************************************
+Report : reference
+Design : prefix8_pipe
+Version: X-2025.06-SP4
+Date   : Mon Nov 16 20:59:49 2026
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2X1             gscl45nm       2.346500      11     25.811499  
+AOI21X1            gscl45nm       2.815800       9     25.342200  
+BUFX2              gscl45nm       2.346500      46    107.938996  
+DFFSR              gscl45nm      10.324600      46    474.931610  n
+INVX1              gscl45nm       1.407900      10     14.079000  
+OAI21X1            gscl45nm       2.815800       2      5.631600  
+XNOR2X1            gscl45nm       4.693000       5     23.464999  
+XOR2X1             gscl45nm       4.693000      11     51.622998  
+-----------------------------------------------------------------------------
+Total 8 references                                    728.822902
+1

@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : prefix8_pipe
+Version: X-2025.06-SP4
+Date   : Mon Nov 16 20:59:49 2026
+****************************************
+
+Library(s) Used:
+
+    gscl45nm (File: /home/jgasaba2/common/Desktop/ece527/pr2/taskB/gscl45nm.db)
+
+Number of ports:                           28
+Number of nets:                           205
+Number of cells:                          186
+Number of combinational cells:             94
+Number of sequential cells:                46
+Number of macros/black boxes:               0
+Number of buf/inv:                         56
+Number of references:                       8
+
+Combinational area:                253.891292
+Buf/Inv area:                      122.017996
+Noncombinational area:             474.931610
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                   728.822902
+Total area:                 undefined
+1

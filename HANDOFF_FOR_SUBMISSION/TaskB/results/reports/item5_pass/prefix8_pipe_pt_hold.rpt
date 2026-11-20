@@ -1,0 +1,150 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type min
+	-slack_lesser_than 100.00
+	-max_paths 5
+	-sort_by slack
+Design : prefix8_pipe
+Version: O-2018.06
+Date   : Mon Nov 16 21:00:07 2026
+****************************************
+
+
+  Startpoint: S_reg[7] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: S[7] (output port clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.20       0.20
+  S_reg[7]/CLK (DFFSR)                     0.00       0.20 r
+  S_reg[7]/Q (DFFSR)                       0.10       0.30 r
+  S[7] (out)                               0.00       0.30 r
+  data arrival time                                   0.30
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.20       0.20
+  clock reconvergence pessimism            0.00       0.20
+  clock uncertainty                        0.50       0.70
+  output external delay                    0.00       0.70
+  data required time                                  0.70
+  ---------------------------------------------------------------
+  data required time                                  0.70
+  data arrival time                                  -0.30
+  ---------------------------------------------------------------
+  slack (VIOLATED)                                   -0.40
+
+
+  Startpoint: S_reg[6] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: S[6] (output port clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.20       0.20
+  S_reg[6]/CLK (DFFSR)                     0.00       0.20 r
+  S_reg[6]/Q (DFFSR)                       0.10       0.30 r
+  S[6] (out)                               0.00       0.30 r
+  data arrival time                                   0.30
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.20       0.20
+  clock reconvergence pessimism            0.00       0.20
+  clock uncertainty                        0.50       0.70
+  output external delay                    0.00       0.70
+  data required time                                  0.70
+  ---------------------------------------------------------------
+  data required time                                  0.70
+  data arrival time                                  -0.30
+  ---------------------------------------------------------------
+  slack (VIOLATED)                                   -0.40
+
+
+  Startpoint: S_reg[5] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: S[5] (output port clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.20       0.20
+  S_reg[5]/CLK (DFFSR)                     0.00       0.20 r
+  S_reg[5]/Q (DFFSR)                       0.10       0.30 r
+  S[5] (out)                               0.00       0.30 r
+  data arrival time                                   0.30
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.20       0.20
+  clock reconvergence pessimism            0.00       0.20
+  clock uncertainty                        0.50       0.70
+  output external delay                    0.00       0.70
+  data required time                                  0.70
+  ---------------------------------------------------------------
+  data required time                                  0.70
+  data arrival time                                  -0.30
+  ---------------------------------------------------------------
+  slack (VIOLATED)                                   -0.40
+
+
+  Startpoint: S_reg[4] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: S[4] (output port clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.20       0.20
+  S_reg[4]/CLK (DFFSR)                     0.00       0.20 r
+  S_reg[4]/Q (DFFSR)                       0.10       0.30 r
+  S[4] (out)                               0.00       0.30 r
+  data arrival time                                   0.30
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.20       0.20
+  clock reconvergence pessimism            0.00       0.20
+  clock uncertainty                        0.50       0.70
+  output external delay                    0.00       0.70
+  data required time                                  0.70
+  ---------------------------------------------------------------
+  data required time                                  0.70
+  data arrival time                                  -0.30
+  ---------------------------------------------------------------
+  slack (VIOLATED)                                   -0.40
+
+
+  Startpoint: S_reg[3] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: S[3] (output port clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.20       0.20
+  S_reg[3]/CLK (DFFSR)                     0.00       0.20 r
+  S_reg[3]/Q (DFFSR)                       0.10       0.30 r
+  S[3] (out)                               0.00       0.30 r
+  data arrival time                                   0.30
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.20       0.20
+  clock reconvergence pessimism            0.00       0.20
+  clock uncertainty                        0.50       0.70
+  output external delay                    0.00       0.70
+  data required time                                  0.70
+  ---------------------------------------------------------------
+  data required time                                  0.70
+  data arrival time                                  -0.30
+  ---------------------------------------------------------------
+  slack (VIOLATED)                                   -0.40
+
+Warning: report_timing has satisfied the max_paths criteria. There are 79 further endpoints which have paths of interest with slack less than   100.00 that were not considered when generating this report. (UITE-502)
+
+1

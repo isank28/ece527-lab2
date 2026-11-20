@@ -1,0 +1,151 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 5
+Design : csa4_pipe
+Version: X-2025.06-SP4
+Date   : Tue Nov 17 20:23:38 2026
+****************************************
+
+Operating Conditions: typical   Library: gscl45nm
+Wire Load Model Mode: top
+
+  Startpoint: A[3] (input port clocked by clk)
+  Endpoint: A_reg_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.20       0.20
+  input external delay                     0.60       0.80 r
+  A[3] (in)                                0.00       0.80 r
+  A_reg_reg[3]/D (DFFSR)                   0.00       0.80 r
+  data arrival time                                   0.80
+
+  clock clk (rise edge)                    2.00       2.00
+  clock network delay (ideal)              0.20       2.20
+  A_reg_reg[3]/CLK (DFFSR)                 0.00       2.20 r
+  library setup time                      -0.07       2.13
+  data required time                                  2.13
+  -----------------------------------------------------------
+  data required time                                  2.13
+  data arrival time                                  -0.80
+  -----------------------------------------------------------
+  slack (MET)                                         1.33
+
+
+  Startpoint: A[2] (input port clocked by clk)
+  Endpoint: A_reg_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.20       0.20
+  input external delay                     0.60       0.80 r
+  A[2] (in)                                0.00       0.80 r
+  A_reg_reg[2]/D (DFFSR)                   0.00       0.80 r
+  data arrival time                                   0.80
+
+  clock clk (rise edge)                    2.00       2.00
+  clock network delay (ideal)              0.20       2.20
+  A_reg_reg[2]/CLK (DFFSR)                 0.00       2.20 r
+  library setup time                      -0.07       2.13
+  data required time                                  2.13
+  -----------------------------------------------------------
+  data required time                                  2.13
+  data arrival time                                  -0.80
+  -----------------------------------------------------------
+  slack (MET)                                         1.33
+
+
+  Startpoint: A[1] (input port clocked by clk)
+  Endpoint: A_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.20       0.20
+  input external delay                     0.60       0.80 r
+  A[1] (in)                                0.00       0.80 r
+  A_reg_reg[1]/D (DFFSR)                   0.00       0.80 r
+  data arrival time                                   0.80
+
+  clock clk (rise edge)                    2.00       2.00
+  clock network delay (ideal)              0.20       2.20
+  A_reg_reg[1]/CLK (DFFSR)                 0.00       2.20 r
+  library setup time                      -0.07       2.13
+  data required time                                  2.13
+  -----------------------------------------------------------
+  data required time                                  2.13
+  data arrival time                                  -0.80
+  -----------------------------------------------------------
+  slack (MET)                                         1.33
+
+
+  Startpoint: A[0] (input port clocked by clk)
+  Endpoint: A_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.20       0.20
+  input external delay                     0.60       0.80 r
+  A[0] (in)                                0.00       0.80 r
+  A_reg_reg[0]/D (DFFSR)                   0.00       0.80 r
+  data arrival time                                   0.80
+
+  clock clk (rise edge)                    2.00       2.00
+  clock network delay (ideal)              0.20       2.20
+  A_reg_reg[0]/CLK (DFFSR)                 0.00       2.20 r
+  library setup time                      -0.07       2.13
+  data required time                                  2.13
+  -----------------------------------------------------------
+  data required time                                  2.13
+  data arrival time                                  -0.80
+  -----------------------------------------------------------
+  slack (MET)                                         1.33
+
+
+  Startpoint: B[0] (input port clocked by clk)
+  Endpoint: B_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.20       0.20
+  input external delay                     0.60       0.80 r
+  B[0] (in)                                0.00       0.80 r
+  B_reg_reg[0]/D (DFFSR)                   0.00       0.80 r
+  data arrival time                                   0.80
+
+  clock clk (rise edge)                    2.00       2.00
+  clock network delay (ideal)              0.20       2.20
+  B_reg_reg[0]/CLK (DFFSR)                 0.00       2.20 r
+  library setup time                      -0.07       2.13
+  data required time                                  2.13
+  -----------------------------------------------------------
+  data required time                                  2.13
+  data arrival time                                  -0.80
+  -----------------------------------------------------------
+  slack (MET)                                         1.33
+
+
+1

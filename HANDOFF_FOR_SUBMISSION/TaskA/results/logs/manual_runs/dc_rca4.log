@@ -1,0 +1,370 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid this.
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version X-2025.06-SP4 for linux64 - Nov 25, 2025 
+
+                    Copyright (c) 1988 - 2025 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+      Inc.  This software may only be used in accordance with the terms and
+  conditions of a written license agreement with Synopsys, Inc.  All other use,
+   reproduction, or distribution of this software is strictly prohibited.  By
+   installing, accessing, using, or executing this software, you agree that it
+  will reside on, operate within, and have access to the computers and networks
+    where such software is used ("Host System"), and that Synopsys may access
+     components and data of the Host System as necessary for it to function
+ properly, to authenticate and validate license keys, to verify that it is used
+ only in conformity with the applicable license restrictions, and to communicate
+                 error messages and associated data to Synopsys.
+
+Initializing...
+Initializing gui preferences from file  /u/jgasaba2/.synopsys_dc_gui/preferences.tcl
+Current time:       Sun Nov 15 21:49:48 2026
+Hostname:           mo.ece.pdx.edu
+CPU Model:          Intel Xeon Processor (Cascadelake)
+CPU Details:        Cores = 32 : Sockets = 32 : Cache Size = 16384 KB : Freq = 2.50 GHz
+OS:                 Linux 3.10.0-1160.119.1.el7.x86_64
+RAM:                119 GB (Free  16 GB)
+Swap:                 0 GB (Free   0 GB)
+Work Filesystem:    /home/jgasaba2 mounted to vol-lapis.cat.pdx.edu:/lapis/home/23/jgasaba2
+Tmp Filesystem:     / mounted to /dev/vda1
+Work Disk:          4212 GB (Free 4003 GB)
+Tmp Disk:            49 GB (Free  14 GB)
+#**************************************************
+#* ECE 527 PR_2 Task A
+#* Design Compiler script: Fig 1 pipelined ripple-carry adder (rca4_pipe)
+#* Adapted from the TA's dcFIFO.tcl
+#* Run:  dc_shell -f dc_rca4.tcl | tee dc_rca4.log
+#**************************************************
+#---------------- Settings (change these) ----------------
+set DESIGN      rca4_pipe
+rca4_pipe
+set RTL_FILES   {fa2.sv rca4_pipe.sv}
+fa2.sv rca4_pipe.sv
+set CLK_PERIOD  2.0     ;# ns, starting guess; tighten after reading the timing report
+2.0
+set IN_DELAY    0.6     ;# ns, from the assignment
+0.6
+set CLK_LATENCY 0.2     ;# ns, external (source) clock latency, from the assignment
+0.2
+set OUT_DELAY   0.0     ;# ns, not given in the assignment; confirm with the TA
+0.0
+#---------------- Libraries ----------------
+set target_library gscl45nm.db
+gscl45nm.db
+set link_library   "* gscl45nm.db"
+* gscl45nm.db
+#---------------- Read and link the design ----------------
+read_sverilog $RTL_FILES
+Loading db file '/home/jgasaba2/common/Desktop/ece527/pr2/taskA/gscl45nm.db'
+Loading db file '/pkgs/synopsys/2025/design_compiler/syn/X-2025.06-SP4/libraries/syn/gtech.db'
+Loading db file '/pkgs/synopsys/2025/design_compiler/syn/X-2025.06-SP4/libraries/syn/standard.sldb'
+  Loading link library 'gscl45nm'
+  Loading link library 'gtech'
+Loading sverilog files: '/home/jgasaba2/common/Desktop/ece527/pr2/taskA/fa2.sv' '/home/jgasaba2/common/Desktop/ece527/pr2/taskA/rca4_pipe.sv' 
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/jgasaba2/common/Desktop/ece527/pr2/taskA/fa2.sv
+Compiling source file /home/jgasaba2/common/Desktop/ece527/pr2/taskA/rca4_pipe.sv
+
+Inferred memory devices in process in routine 'rca4_pipe' in file
+	 /home/jgasaba2/common/Desktop/ece527/pr2/taskA/rca4_pipe.sv'.
+==================================================================================
+|    Register Name    |   Type    | Width | Bus | MB |  Set  | Reset | ST | Line |
+==================================================================================
+|     Cin_reg_reg     | Flip-flop |   1   |  N  | N  | None  | Async | N  |  25  |
+|      A_reg_reg      | Flip-flop |   4   |  Y  | N  | None  | Async | N  |  25  |
+|      B_reg_reg      | Flip-flop |   4   |  Y  | N  | None  | Async | N  |  25  |
+|      Cout_reg       | Flip-flop |   1   |  N  | N  | None  | Async | N  |  56  |
+|        S_reg        | Flip-flop |   4   |  Y  | N  | None  | Async | N  |  56  |
+==================================================================================
+Presto compilation completed successfully.
+Current design is now '/home/jgasaba2/common/Desktop/ece527/pr2/taskA/fa2.db:fa2'
+Loaded 2 designs.
+Current design is 'fa2'.
+fa2 rca4_pipe
+current_design $DESIGN
+Current design is 'rca4_pipe'.
+{rca4_pipe}
+link
+
+  Linking design 'rca4_pipe'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (2 designs)               /home/jgasaba2/common/Desktop/ece527/pr2/taskA/rca4_pipe.db, etc
+  gscl45nm (library)          /home/jgasaba2/common/Desktop/ece527/pr2/taskA/gscl45nm.db
+
+Information: Summary of messages issued during linking: (LINK-1806)
+No messages were issued during linking.
+1
+check_design
+1
+#---------------- Timing constraints ----------------
+create_clock -name clk -period $CLK_PERIOD [get_ports clk]
+1
+set_clock_latency -source $CLK_LATENCY [get_clocks clk]
+1
+set_input_delay  $IN_DELAY  -clock clk [remove_from_collection [all_inputs] [get_ports clk]]
+1
+set_output_delay $OUT_DELAY -clock clk [all_outputs]
+1
+#---------------- Synthesize ----------------
+compile -ungroup_all
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | X-2025.06-DWBB_202506.4 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler                                                                   |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 19                                     |
+| Number of User Hierarchies                              | 2                                      |
+| Sequential Cell Count                                   | 14                                     |
+| Macro Count                                             | 0                                      |
+| Pad Count                                               | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT Class                                      | 0                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch Cells                              | 0                                      |
+| Number of Dont Touch Nets                               | 0                                      |
+| Number of Size Only Cells                               | 0                                      |
+| Design with Target Library Subset (with clock_path)     | false  (false )                        |
+| Design with UPF Data                                    | false                                  |
+====================================================================================================
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'fa2_0'
+Module: DW01_add_width3, Ports: 11, Input: 7, Output: 4, Inout: 0
+Module: DW01_add_width3, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Processing 'rca4_pipe'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Ungrouping hierarchy u_fa2_low. (OPT-772)
+Information: Ungrouping hierarchy u_fa2_high. (OPT-772)
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:00     202.7      0.00       0.0      61.4                          
+    0:00:00     202.7      0.00       0.0      61.4                          
+    0:00:00     202.7      0.00       0.0      61.4                          
+    0:00:00     202.7      0.00       0.0      61.4                          
+    0:00:00     202.7      0.00       0.0      61.4                          
+    0:00:00     202.7      0.00       0.0      61.4                          
+    0:00:00     202.7      0.00       0.0      61.4                          
+    0:00:00     202.7      0.00       0.0      61.4                          
+    0:00:00     202.7      0.00       0.0      61.4                          
+    0:00:00     209.8      0.00       0.0      48.2                          
+    0:00:00     214.5      0.00       0.0      38.8                          
+    0:00:00     223.9      0.00       0.0      22.5                          
+    0:00:00     230.4      0.00       0.0      13.2                          
+    0:00:00     232.3      0.00       0.0      11.8                          
+    0:00:00     232.3      0.00       0.0      11.8                          
+    0:00:00     232.3      0.00       0.0      11.8                          
+    0:00:00     232.3      0.00       0.0      11.8                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:00     232.3      0.00       0.0      11.8                          
+    0:00:00     232.3      0.00       0.0      11.8                          
+    0:00:00     232.3      0.00       0.0      11.8                          
+    0:00:00     232.3      0.00       0.0      11.8                          
+    0:00:00     232.3      0.00       0.0      11.8                          
+
+
+  Beginning Design Rule Fixing  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:00     232.3      0.00       0.0      11.8                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:00     232.3      0.00       0.0      11.8                          
+    0:00:00     232.3      0.00       0.0      11.8                          
+    0:00:00     232.3      0.00       0.0      11.8                          
+    0:00:00     232.3      0.00       0.0      11.8                          
+    0:00:00     232.3      0.00       0.0      11.8                          
+    0:00:00     232.3      0.00       0.0      11.8                          
+    0:00:00     231.4      0.00       0.0      11.8                          
+    0:00:00     231.4      0.00       0.0      11.8                          
+    0:00:00     231.4      0.00       0.0      11.8                          
+    0:00:00     231.4      0.00       0.0      11.8                          
+    0:00:00     231.4      0.00       0.0      11.8                          
+    0:00:00     231.4      0.00       0.0      11.8                          
+    0:00:00     231.4      0.00       0.0      11.8                          
+Loading db file '/home/jgasaba2/common/Desktop/ece527/pr2/taskA/gscl45nm.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: Total number of MV cells in the design.
+----------------------------------------------------------------------------------------------------
+ MV Cells                                           Total Number                                   
+----------------------------------------------------------------------------------------------------
+ Level Shifter:                                     0                                             
+ Enable Level Shifter:                              0                                             
+ Isolation Cell:                                    0                                             
+ Retention Cell:                                    0                                             
+ Retention Clamp Cell:                              0                                             
+ Switch Cell:                                       0                                             
+ Always-On Cell:                                    0                                             
+ Repeater Cell:                                     0                                             
+
+----------------------------------------------------------------------------------------------------
+Unmapped MV Cells 
+----------------------------------------------------------------------------------------------------
+0 Isolation Cells are unmapped 
+0 Retention Clamp Cells are unmapped 
+----------------------------------------------------------------------------------------------------
+1
+#---------------- Reports (saved to files for turn-in) ----------------
+file mkdir reports
+report_timing -delay_type max -max_paths 5 > reports/${DESIGN}_timing_max.rpt
+report_timing -delay_type min              > reports/${DESIGN}_timing_min.rpt
+report_area                                > reports/${DESIGN}_area.rpt
+report_reference                           > reports/${DESIGN}_cells.rpt
+report_qor                                 > reports/${DESIGN}_qor.rpt
+# Worst path of each type (the overall worst is often the input path)
+report_timing -delay_type max \
+    -from [all_registers -clock_pins] -to [all_registers -data_pins] \
+                                           > reports/${DESIGN}_timing_reg2reg.rpt
+report_timing -delay_type max \
+    -from [all_registers -clock_pins] -to [all_outputs] \
+                                           > reports/${DESIGN}_timing_reg2out.rpt
+# Also show the key reports on screen
+report_timing -delay_type max
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rca4_pipe
+Version: X-2025.06-SP4
+Date   : Sun Nov 15 21:49:49 2026
+****************************************
+
+Operating Conditions: typical   Library: gscl45nm
+Wire Load Model Mode: top
+
+  Startpoint: A[0] (input port clocked by clk)
+  Endpoint: A_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.20       0.20
+  input external delay                     0.60       0.80 r
+  A[0] (in)                                0.00       0.80 r
+  A_reg_reg[0]/D (DFFSR)                   0.00       0.80 r
+  data arrival time                                   0.80
+
+  clock clk (rise edge)                    2.00       2.00
+  clock network delay (ideal)              0.20       2.20
+  A_reg_reg[0]/CLK (DFFSR)                 0.00       2.20 r
+  library setup time                      -0.07       2.13
+  data required time                                  2.13
+  -----------------------------------------------------------
+  data required time                                  2.13
+  data arrival time                                  -0.80
+  -----------------------------------------------------------
+  slack (MET)                                         1.33
+
+
+1
+report_area
+ 
+****************************************
+Report : area
+Design : rca4_pipe
+Version: X-2025.06-SP4
+Date   : Sun Nov 15 21:49:49 2026
+****************************************
+
+Library(s) Used:
+
+    gscl45nm (File: /home/jgasaba2/common/Desktop/ece527/pr2/taskA/gscl45nm.db)
+
+Number of ports:                           16
+Number of nets:                            68
+Number of cells:                           57
+Number of combinational cells:             29
+Number of sequential cells:                14
+Number of macros/black boxes:               0
+Number of buf/inv:                         13
+Number of references:                       8
+
+Combinational area:                 86.820497
+Buf/Inv area:                       28.627299
+Noncombinational area:             144.544403
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                   231.364900
+Total area:                 undefined
+1
+#---------------- Write the netlist for PrimeTime ----------------
+write -f verilog -h -o ${DESIGN}_netlist.v
+Writing verilog file '/home/jgasaba2/common/Desktop/ece527/pr2/taskA/rca4_pipe_netlist.v'.
+1
+exit
+
+Memory usage for this session 129 Mbytes.
+Memory usage for this session including child processes 129 Mbytes.
+CPU usage for this session 4 seconds ( 0.00 hours ).
+Elapsed time for this session 6 seconds ( 0.00 hours ).
+
+Thank you...

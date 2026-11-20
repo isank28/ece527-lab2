@@ -1,0 +1,6 @@
+Skew sweep (uncertainty mode, period 1.17 ns)
+skew     setup_all    hold_all   setup_r2r    hold_r2r   Tmin_all   Tmin_r2r
+0.1          0.400       0.004       0.647       0.087      0.770      0.523
+0.3          0.200      -0.196       0.447      -0.113      0.970      0.723
+0.5         -0.000      -0.396       0.247      -0.313      1.170      0.923
+0.7         -0.200      -0.596       0.047      -0.513      1.370      1.123

@@ -1,0 +1,18 @@
+Warning: Design 'array_multiplier' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 10
+        -max_paths 10
+Design : array_multiplier
+Version: X-2025.06-SP4
+Date   : Thu Nov 19 22:45:39 2026
+****************************************
+
+Operating Conditions: nom_pvt   Library: gtech
+Wire Load Model Mode: top
+No paths.
+
+1

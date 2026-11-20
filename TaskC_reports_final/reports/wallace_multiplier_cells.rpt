@@ -1,0 +1,27 @@
+ 
+****************************************
+Report : reference
+Design : wallace_multiplier
+Version: X-2025.06-SP4
+Date   : Thu Nov 19 22:45:40 2026
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+*ADD_UNS_OP_16_16_16              0.000000       1      0.000000  s, u
+GTECH_AND2         gtech          0.000000      64      0.000000  u
+csa                               0.000000       6      0.000000  h, u
+-----------------------------------------------------------------------------
+Total 3 references                                      0.000000
+1

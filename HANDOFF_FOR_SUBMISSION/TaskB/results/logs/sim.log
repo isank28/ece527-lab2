@@ -1,0 +1,98 @@
+Reading pref.tcl
+
+# 2024.2
+
+# do run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 20:59:34 on Nov 16,2026
+# vlog -sv -cover bcst "+incdir+." fa2.sv 
+# -- Compiling module fa2
+# 
+# Top level modules:
+# 	fa2
+# End time: 20:59:34 on Nov 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 20:59:35 on Nov 16,2026
+# vlog -sv -cover bcst "+incdir+." prefix8_pipe.sv 
+# -- Compiling module prefix8_pipe
+# 
+# Top level modules:
+# 	prefix8_pipe
+# End time: 20:59:35 on Nov 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 20:59:35 on Nov 16,2026
+# vlog -sv -cover bcst "+incdir+." csa8_pipe.sv 
+# -- Compiling module csa8_pipe
+# 
+# Top level modules:
+# 	csa8_pipe
+# End time: 20:59:35 on Nov 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 20:59:35 on Nov 16,2026
+# vlog -sv "+incdir+." "+define+TEST_CSA8" tb_taskB.sv 
+# -- Compiling module tb_taskB
+# 
+# Top level modules:
+# 	tb_taskB
+# End time: 20:59:35 on Nov 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2024.2 Compiler 2024.05 May 20 2024
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# Start time: 20:59:35 on Nov 16,2026
+# vopt tb_taskB -o top_opt "+acc" 
+# 
+# Top level modules:
+# 	tb_taskB
+# 
+# Analyzing design...
+# -- Loading module tb_taskB
+# -- Loading module prefix8_pipe
+# -- Loading module csa8_pipe
+# -- Loading module fa2
+# Optimizing 4 design-units (inlining 0/10 module instances):
+# -- Optimizing module csa8_pipe(fast)
+# -- Optimizing module prefix8_pipe(fast)
+# -- Optimizing module tb_taskB(fast)
+# -- Optimizing module fa2(fast)
+# Optimized design name is top_opt
+# End time: 20:59:37 on Nov 16,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 1
+# vsim top_opt -coverage -nolog -onfinish stop 
+# Start time: 20:59:37 on Nov 16,2026
+# //  Questa Sim-64
+# //  Version 2024.2 linux_x86_64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.tb_taskB(fast)
+# Loading work.prefix8_pipe(fast)
+# Loading work.csa8_pipe(fast)
+# Loading work.fa2(fast)
+# t=60000  A=  0 B=  0 Cin=0 | PFX: Cout=0 S=  0 | expected   0
+# t=70000  A=  0 B=  1 Cin=0 | PFX: Cout=0 S=  1 | expected   1
+# t=80000  A=  0 B=  2 Cin=0 | PFX: Cout=0 S=  2 | expected   2
+# t=90000  A=  0 B=  3 Cin=0 | PFX: Cout=0 S=  3 | expected   3
+# t=1310770000  A=255 B=255 Cin=1 | PFX: Cout=1 S=255 | expected 511
+# PASS: 131072 vectors checked, 0 errors
+# ** Note: $finish    : tb_taskB.sv(92)
+#    Time: 1310770 ns  Iteration: 1  Instance: /tb_taskB
+# Break in Module tb_taskB at tb_taskB.sv line 92
+# Stopped at tb_taskB.sv line 92
+#  quit -f
+# End time: 20:59:38 on Nov 16,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

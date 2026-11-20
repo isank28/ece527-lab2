@@ -1,0 +1,48 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : wallace_multiplier
+Version: X-2025.06-SP4
+Date   : Thu Nov 19 22:45:40 2026
+****************************************
+
+Operating Conditions: nom_pvt   Library: gtech
+Wire Load Model Mode: top
+
+  Startpoint: a[7] (input port)
+  Endpoint: p[15] (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  a[7] (in)                                               0.00       0.00 r
+  C127/Z (GTECH_AND2)                                     0.00       0.00 r
+  u_csa2/b[14] (csa)                                      0.00       0.00 r
+  u_csa2/C41/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa2/C40/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa2/sum[14] (csa)                                    0.00       0.00 r
+  u_csa4/a[14] (csa)                                      0.00       0.00 r
+  u_csa4/C142/Z (GTECH_AND2)                              0.00       0.00 r
+  u_csa4/C141/Z (GTECH_OR2)                               0.00       0.00 r
+  u_csa4/C140/Z (GTECH_OR2)                               0.00       0.00 r
+  u_csa4/carry[15] (csa)                                  0.00       0.00 r
+  u_csa5/c[15] (csa)                                      0.00       0.00 r
+  u_csa5/C38/Z (GTECH_XOR2)                               0.00       0.00 r
+  u_csa5/sum[15] (csa)                                    0.00       0.00 r
+  add_46/A_15 (*ADD_UNS_OP_16_16_16)                      0.00       0.00 r
+  add_46/*cell*21/A[15] (DW01_add_width16)                0.00       0.00 r
+  ...
+  add_46/*cell*21/SUM[15] (DW01_add_width16)              0.00       0.00 r
+  add_46/Z_15 (*ADD_UNS_OP_16_16_16)                      0.00       0.00 r
+  p[15] (out)                                             0.00       0.00 r
+  data arrival time                                                  0.00
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

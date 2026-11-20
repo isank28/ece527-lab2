@@ -1,0 +1,18 @@
+Warning: Design 'array_multiplier' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 10
+        -max_paths 10
+Design : array_multiplier
+Version: L-2016.03-SP3
+Date   : Thu Nov 19 19:38:11 2026
+****************************************
+
+Operating Conditions: typical   Library: gscl45nm
+Wire Load Model Mode: top
+No paths.
+
+1

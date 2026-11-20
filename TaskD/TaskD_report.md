@@ -26,22 +26,38 @@ Explain how 8 multiplier bits become 5 overlapping groups with b[-1]=0 and virtu
 - Result: PASS.
 
 ## 5. Synthesis results
-Fill in after running `./run_dc.sh`:
 
 | Metric | Booth-2 Multiplier |
 |---|---|
-| Total cells | |
-| Cell area | |
-| Max delay | |
-| Dynamic power | |
+| Total cells | N/A* |
+| Cell area | N/A* |
+| Max delay | N/A* |
+| Dynamic power | N/A* |
 
-Source: `reports/booth_{area,qor,timing,power}.rpt`
+\* DC synthesis failed — all report files (booth_qor.rpt, booth_area.rpt, booth_timing.rpt, booth_power.rpt) contain **"Current design is not defined. (UID-4)"** error. The `booth_multiplier` design was not created in the WORK library because `read_sverilog`/`elaborate`/`link` failed. See `logs/dc_booth.log` for full error details.
+
+Source: `reports/booth_{area,qor,timing,power}.rpt` (all empty/error files)
 
 ## 6. Comparison with unsigned 8×8 array multiplier (Task C)
-Fill in side-by-side and discuss:
-- Which is smaller/faster/lower power, and why?
-- Impact of halving partial products vs. recode/negation overhead.
-- Suitability for signed multiplication.
+
+Could not complete — Task D DC synthesis failed, so no Booth-2 metrics are available for comparison. Task C metrics (from DC reports):
+
+| Metric | Task C Array Multiplier | Task C Wallace Tree |
+|---|---|---|
+| Total cells | 72 | 676 |
+| Cell area | 150.18 μm² | 1947.13 μm² |
+| Max delay | N/A (unresolved refs) | 2.32 ns |
+| Dynamic power | 0.5029 mW | 3.9877 mW |
 
 ## 7. Critical path
-Identify the critical path from `reports/booth_timing.rpt` (worst data arrival time). Describe it: e.g., recoder → partial-product mux/negation → CSA chain → final CPA → output.
+
+Could not identify — `booth_timing.rpt` contains only the error "Current design is not defined. (UID-4)". No timing paths were computed because DC compilation failed for `booth_multiplier`. The `csa.sv` module compiled independently (122 cells, 0.91 ns max delay) but the top-level `booth_multiplier` design did not link successfully.
+
+**Root cause:** All Task D RTL files (`csa.sv`, `booth2_recode.sv`, `booth_multiplier.sv`) contain SystemVerilog assertions (`assert property` / `assert`) that the Presto compiler in DC L-2016.03-SP3 rejects with `VER-708` / `VER-294` errors. The `// synthesis translate_off` / `translate_on` wrappers added to Task C files were not applied to Task D files before this DC run.
+
+**Fix needed:** Add `// synthesis translate_off` before and `// synthesis translate_on` after all `assert` blocks in:
+- `rtl/csa.sv` (line 31-33)
+- `rtl/booth2_recode.sv` (lines 30-41)
+- `rtl/booth_multiplier.sv` (lines 104-122)
+
+Then re-run DC synthesis on the lab machine (X-2025.06-SP4).
