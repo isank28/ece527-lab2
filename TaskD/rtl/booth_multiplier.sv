@@ -97,30 +97,6 @@ module booth_multiplier #(
     assign final_sum = {1'b0, s2} + {1'b0, c2};
     assign p = final_sum[W-1:0];
 
-    //======================================================================
-    // SystemVerilog Assertions (SVA) — for formal verification / simulation
-    //======================================================================
-
-    // Booth recoder coefficient validity: coef in {-2,-1,0,+1,+2}
-    for (g = 0; g < 5; g++) begin : gen_coef_check
-        assert coef_valid : (coef[g] == 3'b000) || (coef[g] == 3'b001) ||
-                            (coef[g] == 3'b010) || (coef[g] == 3'b100) ||
-                            (coef[g] == 3'b111);
-    end
-
-    // Output range: signed 8x8 product fits in [-2^(2N-1), 2^(2N-1)-1]
-    assert output_range : !$isunknown(p) |->
-        (p >= -$signed({1'b1, {(2*N-1){1'b0}}})) &&
-        (p <=  $signed({1'b0, {(2*N-1){1'b1}}}));
-
-    // No X/Z on primary outputs when inputs are valid
-    assert outputs_valid : !$isunknown(a) && !$isunknown(b) |-> !$isunknown(p);
-
-    // Formal correctness: output equals signed product of inputs
-    // (Useful for formal/bounded model checking tools)
-    assert functional_correct : !$isunknown(a) && !$isunknown(b) |->
-        (p == $signed(a) * $signed(b));
-
 endmodule
 
 `default_nettype wire

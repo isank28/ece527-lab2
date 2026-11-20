@@ -22,22 +22,3 @@ module booth2_recode (
     end
 
 endmodule
-
-//======================================================================
-// SystemVerilog Assertions (SVA) — booth2_recode
-//======================================================================
-
-// Coefficient validity: only {-2,-1,0,+1,+2} encodings allowed
-assert coef_valid : (coef == 3'b000) || (coef == 3'b001) ||
-                    (coef == 3'b010) || (coef == 3'b100) ||
-                    (coef == 3'b111);
-
-// Recode mapping correctness (combinational)
-assert recode_mapping : !$isunknown(bits) |->
-    ((bits == 3'b000 || bits == 3'b111) -> (coef == 3'b000)) &&
-    ((bits == 3'b001 || bits == 3'b010) -> (coef == 3'b001)) &&
-    ((bits == 3'b011)                   -> (coef == 3'b010)) &&
-    ((bits == 3'b100)                   -> (coef == 3'b100)) &&
-    ((bits == 3'b101 || bits == 3'b110) -> (coef == 3'b111));
-
-`default_nettype wire

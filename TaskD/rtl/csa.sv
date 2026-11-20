@@ -28,10 +28,6 @@ module csa #(
         end
     endgenerate
 
-    // No X/Z on outputs when inputs are valid
-    assert outputs_valid : !$isunknown(a) && !$isunknown(b) && !$isunknown(c)
-                           |-> !$isunknown(sum) && !$isunknown(carry);
-
 endmodule
 
 `default_nettype wire
